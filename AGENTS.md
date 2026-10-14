@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This LeadGenBureau project contains independent React/TypeScript/Vite concepts: C at `/` (`src/App.tsx`, `src/styles.css`) and A at `/revenue-os/` (`src/RevenueApp.tsx`, `src/revenue.css`). `src/products.ts` shares confirmed product content. `src/assets/` holds Montserrat and its license. Two HTML entries support static hosting; keep their styles isolated.
+This LeadGenBureau project contains independent React/TypeScript/Vite concepts: C at `/` (`App.tsx`, `styles.css`), A at `/revenue-os/` (`RevenueApp.tsx`, `revenue.css`) and B at `/sales-journey/` (`JourneyApp.tsx`, `journey.css`), all under `src/`. `products.ts` shares confirmed content; `ConceptNav.tsx` links all variants. `src/assets/` holds Montserrat and its license. Three HTML entries support static hosting; keep their styles isolated.
 
 `PRODUCT.md` records confirmed facts. `docs/` holds briefs and research. `.impeccable/` stores approved comps, measurements and review evidence; never serve it as application content. `.agents/skills/impeccable/` is the independent project-local Codex skill.
 
@@ -25,7 +25,7 @@ Use two-space indentation, single-quoted JavaScript strings and descriptive name
 
 ## Testing Guidelines
 
-`scripts/check-ui.mjs` and `scripts/check-revenue.mjs` use Playwright and Node assertions for both concepts at five widths, product/stage selection, keyboard access, validation and absence of submissions/storage. Extend checks for changed behavior. No coverage threshold or unit-test framework is configured. Report checks performed; screenshots alone do not prove functionality.
+The three `scripts/check-*.mjs` files use Playwright and Node assertions for C/A/B at five/six/seven widths, product/stage selection, reciprocal navigation, scroll state, keyboard access, validation and absence of submissions/storage. Extend checks for changed behavior. No coverage threshold or unit-test framework is configured. Report checks performed; screenshots alone do not prove functionality.
 
 ## Commit & Pull Request Guidelines
 

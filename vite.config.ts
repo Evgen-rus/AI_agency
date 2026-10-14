@@ -3,5 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
-  build: { rolldownOptions: { input: ['index.html', 'revenue-os/index.html'] } },
+  build: {
+    rolldownOptions: { input: ['index.html', 'revenue-os/index.html', 'sales-journey/index.html'] },
+  },
 });

@@ -1,5 +1,17 @@
 # Continuation checkpoint
 
+## Latest: all three concepts public with reciprocal navigation
+
+2026-10-14. User authorized autonomous B — Sales Journey, image comps first, public publication on the existing Site, and mutual links in A/B/C for director review. Three native image comps produced; folio chosen under delegation and persisted with exact prompt provenance. B lives at `/sales-journey/`; A `/revenue-os/`; C `/`. Shared `ConceptNav` is an in-flow top strip; route imports/styles and static HTML entries stay independent.
+
+Fresh finish reviewer initial **fix**; four findings (seed corroboration, fixed-nav overlap, coral connector, eyebrow/synthetic disclosure position) all **resolved** in verdict pass **ship**. This ship covers scored corrections. Record `.impeccable/review/sales-journey/VERDICT.md`. Historical reproduction gates89/88%; after in-flow comparison strip and label relocation, uncompensated final diff75% drift, disclosed in QA. No numeric post-fix match claim. No shipping raster assets, no fabricated proof, no real forms/backend. Product truth shared unchanged.
+
+Production UI checks pass C5/A6/B7 widths, with B scroll state, keyboard, next/back, safe local draft, anchors and reciprocal navigation on all routes. Biome/types/build pass. Safari/hardware/screen readers not tested. Native Sites deployment4 succeeded `appgdep_6acf8db21a4481918c3e66f22a828383`, pushed Sites source `1ebae934414dbff67bd5f28fbe83dab87f48faf6`; existing ID/public audience preserved. Latest URLs/IDs in `.openai/deployment.json`. Separate Sites copy is still not automatically synchronized.
+
+GitHub and Sites retain separate histories. B/context changes belong to the main GitHub repository too; confirm actual HEAD/origin main when resuming, rather than treating the Sites source SHA as a GitHub commit. All three design directions are now implemented; next product/design selection belongs to the user.
+
+Older sections below are historical.
+
 ## Latest: user screenshot correction and project critique
 
 2026-10-14. User rejected A's long bracket connector, authorized a short downward arrow and requested an independent project critique. Two isolated assessments reviewed published A and C; baseline ratings A22/32 and C24/32. Detector once on markup,0findings; live browser measured very small A text and mobile targets. Critique archive `.impeccable/critique/2026-10-14T13-11-09Z__src-revenueapp-tsx.md`; B evidence in same folder. Scores describe baseline, not a new rating after corrections.

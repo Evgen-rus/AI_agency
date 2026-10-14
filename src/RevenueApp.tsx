@@ -2,6 +2,7 @@ import type { FormEvent } from 'react';
 import { useRef, useState } from 'react';
 import { products } from './products';
 import './revenue.css';
+import ConceptNav from './ConceptNav';
 
 const stages = [
   {
@@ -91,6 +92,7 @@ export default function RevenueApp() {
 
   return (
     <>
+      <ConceptNav active="a" />
       <a className="r-skip" href="#revenue-demo">
         К демонстрации
       </a>

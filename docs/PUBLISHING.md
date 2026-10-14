@@ -14,6 +14,6 @@ The plugin build helper's npm shim failed on this host. A normal PowerShell `npm
 
 ## Access
 
-The owner explicitly opened public access and authorized public concept updates. `public` allows anyone with the URL; `workspace_all` allows workspace members; `custom` uses selected viewers/groups. Preserve public access for updates. C is at `/`; A is at `/revenue-os/`, with separate static HTML entries.
+The owner explicitly opened public access and authorized public concept updates. `public` allows anyone with the URL; `workspace_all` allows workspace members; `custom` uses selected viewers/groups. Preserve public access for updates. C is at `/`; A is at `/revenue-os/`; B is at `/sales-journey/`, with separate static HTML entries. Refresh all three entry directories and shared concept navigation before packaging.
 
 The preparation form still produces a local browser draft, without sending or storing it. Deployment does not add a backend or a lead reception channel.

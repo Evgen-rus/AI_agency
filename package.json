@@ -10,7 +10,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "check": "biome check .",
     "format": "biome format --write .",
-    "test:ui": "node scripts/check-ui.mjs && node scripts/check-revenue.mjs"
+    "test:ui": "node scripts/check-ui.mjs && node scripts/check-revenue.mjs && node scripts/check-journey.mjs"
   },
   "dependencies": {
     "react": "19.3.0",

@@ -44,6 +44,21 @@ colors:
   a-error: "#ae263b"
   a-risk-bg: "#ffe4e8"
   a-risk: "#b5223c"
+  b-coral: "#b74632"
+  b-paper: "#f3eee6"
+  b-ink: "#272520"
+  b-muted: "#625e54"
+  b-intro-rule: "#cbc6bb"
+  b-dark-rule: "#969286"
+  b-disclosure: "#c9c4b9"
+  b-light-coral: "#ef907c"
+  b-rule: "#b7afa2"
+  b-dark-copy: "#d4cdc2"
+  b-catalog-rule: "#817b70"
+  b-field-border: "#9e9689"
+  b-error: "#a02f20"
+  b-white: "#ffffff"
+  comparison-hover: "#e4ded3"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -109,6 +124,95 @@ typography:
     fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.55
+  b-display:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "calc(114 * var(--j-unit))"
+    fontWeight: 900
+    lineHeight: 0.91
+    letterSpacing: "-0.04em"
+  b-intro:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "calc(25 * var(--j-unit))"
+    fontWeight: 450
+    lineHeight: 1.4
+    letterSpacing: "-0.025em"
+  b-company:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "calc(70 * var(--j-unit))"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "-0.04em"
+  b-scene:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "calc(54 * var(--j-unit))"
+    fontWeight: 800
+    lineHeight: 1.12
+    letterSpacing: "-0.03em"
+  b-explanation:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "calc(60 * var(--j-unit))"
+    fontWeight: 800
+    letterSpacing: "-0.04em"
+  b-context:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "64px"
+    fontWeight: 700
+    letterSpacing: "-0.04em"
+  b-headline:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "clamp(40px, 5vw, 76px)"
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.04em"
+  b-chapter:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "clamp(32px, 3.7vw, 56px)"
+    fontWeight: 750
+    lineHeight: 1.12
+    letterSpacing: "-0.04em"
+  b-product-title:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "25px"
+    fontWeight: 700
+    lineHeight: 1.3
+  b-body:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: 1.6
+  b-product-body:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.7
+  b-field:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.6
+  b-note:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.6
+  b-help:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.6
+  b-rail:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "calc(21 * var(--j-unit))"
+    fontWeight: 600
+  comparison-label:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "11px"
+    fontWeight: 400
+  comparison-link:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: 1.3
 rounded:
   square: "0"
   status: "30px"
@@ -118,6 +222,8 @@ rounded:
   a-panel: "calc(12 * var(--r-unit))"
   a-field: "8px"
   a-round: "50%"
+  b-square: "0"
+  b-station: "50%"
 spacing:
   control-gap: "18px"
   inset: "24px"
@@ -133,6 +239,14 @@ spacing:
   a-mobile-inset: "24px"
   a-small-inset: "18px"
   a-section: "88px"
+  b-page-inset: "calc(56 * var(--j-unit))"
+  b-field-inset: "20px"
+  b-control-inset: "20px 32px"
+  b-context-gap: "70px"
+  b-tablet-inset: "24px"
+  b-mobile-inset: "20px"
+  b-section: "100px"
+  comparison-inset: "8px 24px"
 components:
   button-primary:
     backgroundColor: "{colors.plum}"
@@ -198,6 +312,51 @@ components:
     textColor: "{colors.a-midnight}"
     rounded: "{rounded.a-panel}"
     padding: "calc(16 * var(--r-unit)) calc(20 * var(--r-unit)) calc(18 * var(--r-unit)) calc(25 * var(--r-unit))"
+  b-button-primary:
+    backgroundColor: "{colors.b-ink}"
+    textColor: "{colors.b-paper}"
+    rounded: "{rounded.b-square}"
+    padding: "{spacing.b-control-inset}"
+  b-button-primary-hover:
+    backgroundColor: "{colors.b-coral}"
+    textColor: "{colors.b-white}"
+  b-button-outline:
+    backgroundColor: "transparent"
+    textColor: "{colors.b-ink}"
+    rounded: "{rounded.b-square}"
+    padding: "14px 26px"
+  b-stage-control:
+    backgroundColor: "{colors.b-paper}"
+    textColor: "{colors.b-ink}"
+    typography: "{typography.b-rail}"
+    width: "25%"
+  b-stage-selected:
+    backgroundColor: "{colors.b-coral}"
+    textColor: "{colors.b-white}"
+    rounded: "{rounded.b-station}"
+  b-input-task:
+    backgroundColor: "transparent"
+    textColor: "{colors.b-ink}"
+    rounded: "{rounded.b-square}"
+    padding: "{spacing.b-field-inset}"
+    typography: "{typography.b-field}"
+  b-demo-panel:
+    backgroundColor: "{colors.b-ink}"
+    textColor: "{colors.b-paper}"
+    rounded: "{rounded.b-square}"
+    padding: "calc(60 * var(--j-unit)) calc(56 * var(--j-unit)) calc(22 * var(--j-unit))"
+  b-product-row:
+    backgroundColor: "{colors.b-ink}"
+    textColor: "{colors.b-paper}"
+    padding: "40px 0"
+    typography: "{typography.b-product-body}"
+  comparison-navigation:
+    backgroundColor: "{colors.b-paper}"
+    textColor: "{colors.b-ink}"
+    padding: "{spacing.comparison-inset}"
+    typography: "{typography.comparison-link}"
+  comparison-navigation-hover:
+    backgroundColor: "{colors.comparison-hover}"
 
 ---
 
@@ -233,6 +392,20 @@ A follows the approved delegated composition `.impeccable/mocks/revenue-os/comma
 - Cobalt native controls, a connected stage path and textual readiness with three distinct dots.
 - Local demonstration and draft preparation with explicit limits.
 
+### B — Sales Journey scope
+
+**Creative North Star: "Sales Journey — editorial process folio"**
+
+B is an independent world at `/sales-journey/`: warm ivory, near-black ink and restrained burnt coral, with a flat four-station process rail and massive compressed Montserrat. Its synthetic company persists through the scene and contextual chapters. It shares confirmed product content and the self-hosted font with A/C. All `b-` tokens describe B; `comparison-` tokens describe the shared strip. `JourneyApp` and `journey.css` load only for B. Existing unprefixed and A tokens remain scoped as described above.
+
+The approved `.impeccable/mocks/sales-journey/folio.png` is development evidence, never page imagery. Ivory is a flat field, without the generated comp's incidental grain. No raster ships; the bundled font and license are reused. The review adaptation places the shared comparison strip in normal flow above each page, moves synthetic disclosure directly after the company name, removes the line above the contextual company title and colors the active rail segment coral.
+
+**Key Characteristics (B):**
+- Warm ivory reading ground, near-black demonstration and catalog fields.
+- Massive compressed display, fine rules and a four-station coral selection.
+- Sticky sequence and desktop context with ordinary scrolling and complete chapter text.
+- Explicit synthetic disclosure, textual product readiness and local draft preview.
+
 ## Colors
 
 The primary family is saturated plum and violet, with cobalt identifying the voice product; paper, ink and lavender establish strong field contrasts. Normative values are in the frontmatter.
@@ -262,6 +435,14 @@ Readiness uses separate paired colors: green for operating, pale cobalt for MVP 
 
 **The Focused Console Rule.** In A, Midnight identifies the demonstration or approach context; white surfaces carry the contact and recommendation inside it.
 
+### B — Sales Journey palette
+
+**Primary:** Burnt Coral identifies selected rail stations, their outgoing segment, chapter step text, caret and light-surface focus. Light Coral carries dark-surface hover, readiness text and focus, keeping the dark scene readable.
+
+**Neutral:** Warm Paper and Folio Ink form the main opposing fields. Muted Ink carries disclaimers and placeholder copy; separate intro, context, scene and catalog rules retain the observed contrast levels. Disclosure and Dark Copy support reading inside ink fields. Field Border and Error provide explicit form feedback. White appears on selected stations and hovered actions.
+
+**The Folio Contrast Rule.** In B, use Burnt Coral on ivory and Light Coral on ink; preserve textual selection and readiness alongside color.
+
 ## Typography
 
 **Display Font:** locally bundled variable Montserrat, with sans-serif fallback.
@@ -284,6 +465,16 @@ A's frontmatter records the opening display, solutions headline, product title a
 
 At 900px the display uses clamp(38px, 7vw, 68px), introductory copy 19px and product body 17px. At 420px the display uses clamp(30px, 8.4vw, 35px). Supporting table content remains 12px on mobile.
 
+### B — Sales Journey type
+
+The bundled Montserrat is the only family. The normative B roles capture the hero, introduction, company, scene, explanation, context, chapter, catalog, body and field ramp. The display's 128% width and horizontal compression (0.78) reproduce the selected folio; introduction uses 116%/0.86 and scene title 120%/0.83 on proportional desktop. These transforms are specific composition decisions, not a second condensed font.
+
+Brand type is 28 units/750; hero CTA 21 units/700; stations 20 units/600; disclosure 18 units; scene bottom 20 units. Section and context headings use the recorded roles. Context paragraphs are 18px/1.6; step labels 14px/650; chapter step 16px; question and draft copy 16px/1.6; product actions 16px; discussion label 20px/600. Product headings are 25px/1.3 and copy 17px/1.7.
+
+At 1100px: brand 23px, header links 15px, hero 7.1vw/1, introduction 18px, CTA 16px, rail 16px, station 17px, company 40px, scene 35px, disclosure 13px, scene bottom 15px, step action 14px, explanation 48px, chapter body 18px, catalog title 20px, catalog body 16px, catalog action 14px and discussion heading 44px. Intro and scene compression is removed. At 700px: brand 19px, header action 12px, hero 11.7vw/1.05, rail 12px, station 15px, company 36px, scene 30px/1.15, disclosure 12px/1.6, explanation 36px, context 48px, chapter 34px and body 17px, catalog/discussion headings 40px, catalog title 24px and action 16px, field 16px, discussion action 15px. At 360px: brand 17px, header action 11px, company 31px, scene 27px and step action 12px. The compressed hero remains; chapter reading sizes do not scale indefinitely.
+
+**The Folio Display Rule.** Reserve horizontal compression for the approved opening and desktop scene; use ordinary readable Montserrat for chapters, context and controls.
+
 ## Layout
 
 The current first surface has a proportional desktop opening: 66.8% hero and 33.2% aside, height 38.672vw. Its graphic index directly follows with four unequal columns (26.9%, 28.32%, 25.78%, 19%), no gutters and a height of 27.995vw. These measurements reproduce the pinned comp; they do not prescribe every future surface.
@@ -302,6 +493,20 @@ The desktop opening uses a 38% left column and remaining-width console with 36-u
 
 At 1200px: 28px opening/header insets, compact stages, two-column recommendation, and action controls beneath its copy. Only the horizontal stage connectors are hidden; the short downward table-to-recommendation arrow stays visible. At 900px: single-column opening and lower sections, square edge-to-edge console, 24px insets, wrapped header, stacked readiness and options, and column footer. The table first-cell inset is 20 units on desktop and becomes 10px on mobile. From 901px through 1350px the industry column is hidden to protect the remaining content. At 420px: 18px insets, two-by-two stage controls, industry column hidden, one-column recommendation and its decorative action icon hidden. The remaining company, status, risk and recommendation retain the meaning.
 
+### B — Sales Journey layout
+
+Above 1100px, `--j-unit: calc(100vw / 1536)` scales the 80-unit header, 370-unit opening, 180-unit rail and 296-unit minimum scene. Opening columns are 67.556%/32.444% with 56-unit page insets; scene columns are 49.2%/50.8%. The four rail buttons each occupy 25%; the rail is sticky at top zero. The story below uses 42%/58%, 70px top gap and 72vh minimum chapters. Context is sticky below the rail, max-width 440px with 40px right inset. Chapters use 40px/0/100px/60px padding; body measure is 60ch.
+
+The ink catalog uses 80px/56px/100px padding and ruled 30%/42%/28% rows. Its introduction is 56ch. Discussion uses equal columns, 100px/56px padding and 45ch copy; the footer uses 40px/56px. At 1100px the rail becomes 120px, insets 24px, hero columns 62%/38%, scene 46%/54%, and catalog rows 33%/42%/25%. Context top becomes 150px; chapters use a 32px left inset.
+
+At 700px the opening, scene, story, catalog rows and discussion stack; page insets are 20px. Rail remains four stations and becomes 106px high. Context becomes static, chapters lose their viewport minimum and use 32px/0/60px padding. Forms and footer stack; controls retain 44px or 48px minimum heights. Anchor scroll margins account for the sticky rail at responsive widths. At 360px header and step-action gaps tighten.
+
+### Shared comparison-strip layout
+
+The strip is an in-flow, relatively positioned flex row above C/A/B, with 8px/24px padding, 24px gap and a bottom rule. It shifts page content by its own height and never overlays it. At 600px it becomes a block with 8px/8px/2px padding; three links share a flex row. This shared surface is separate from each world's header.
+
+**The In-Flow Comparison Rule.** Keep reciprocal concept navigation above the page in normal flow; never make it fixed or overlay page content.
+
 ## Elevation & Depth
 
 No box shadows, gradients, blur or simulated volume are present. Adjacent solid fields, thin rules and contrasting text carry separation. Product-index artwork is flat CSS geometry, with clipping and curves that construct letterforms; it is not a 3D illustration system. Scenario changes reveal the demonstration panel with a 450ms clipped entrance. Reduced-motion removes this entrance and smooth scrolling.
@@ -314,6 +519,10 @@ A is also shadow-free. Its dark workspace and white table/recommendation create 
 
 Button background transitions last 180ms ease-out; stages use 200ms ease-out. Recommendation updates reveal through a 350ms clipped entrance using cubic-bezier(0.16, 1, 0.3, 1). Reduced-motion disables transitions, animations and smooth scrolling. The downward arrow has no transition.
 
+### B — Sales Journey depth and motion
+
+B uses solid tonal fields and 1px rules, without shadows, gradients or texture. Stage-title and context updates use a transient 2px-to-zero blur reveal (420ms, cubic-bezier(0.16, 1, 0.3, 1)); this is scoped to B and does not change C's no-blur rule. The sequence and desktop context use sticky positioning; scrolling remains ordinary. Reduced motion removes both reveal animations and smooth scrolling.
+
 ## Shapes
 
 Buttons, panels and the textarea are square. Readiness pills use the status radius. Geometric artwork combines polygons and constructed curved letterforms; these curves do not establish rounded containers. Thin 1px rules separate explanatory copy, scenario expansion and request preview.
@@ -321,6 +530,10 @@ Buttons, panels and the textarea are square. Readiness pills use the status radi
 ### A — Revenue OS shapes
 
 Use the A radius tokens: restrained controls, softly rounded stages and inner table corners, and larger recommendation corners. Desktop console corners are rounded only on the left; mobile console corners are square. The textarea uses its fixed field radius. Circular action icons and the three readiness dots are semantic/illustrative details, not a prescription for pill containers. Stage connectors are straight 1px CSS rules; the downward connector is a 24px SVG with a 1.7px stroke, without a return loop or right-hand curve.
+
+### B — Sales Journey shapes
+
+B actions, textarea and large scene/catalog fields remain square. Only semantic station markers are circles: 62 proportional units on wide screens, 48px at 1100px and 44px at 700px. The 1px horizontal rail joins their centers; the active station and its outgoing segment turn coral. Inline arrow SVGs communicate direction without introducing raster artwork. The comparison strip has square links and a 1px bottom rule.
 
 ## Components
 
@@ -360,6 +573,20 @@ Keyboard focus uses a 3px outline with 5px offset: violet on light fields, paper
 
 **Draft field:** white textarea, fixed field radius, field-border stroke, placeholder token, 20px padding and 16px/1.7 text; resize is vertical. `aria-invalid` changes its border to Error and textual feedback follows. The form trims input and requires at least ten characters before showing a local preview. It preserves line breaks and wraps long content. No request, persistence or submission channel exists.
 
+### B — Sales Journey controls and signature
+
+**Actions:** ink/paper rectangular actions use 20px/32px padding, 700 weight, inline arrows and a 48px minimum height; hover changes to coral/white. The header outline is transparent with a 1px ink border, 14px/26px padding and 16px/500 type. The hero and mobile actions have their recorded responsive padding. Visible focus is a 3px coral outline with 5px offset; dark scene/catalog focus uses Light Coral.
+
+**Sequence and context:** four native buttons expose `aria-pressed` and `aria-controls`; selection updates the same synthetic company, scene, product and context. Back/next actions retain ordinary controls; chapter intersection updates context during scrolling without locking it. Manual stage changes announce politely. The company heading is followed directly by its synthetic disclosure. Context begins with the company heading, with no decorative label above it. Stage four is a next conversation, never a completed sale.
+
+**Catalog:** dark flat rows pair product title and textual readiness with explanation and next action. Native links preserve the product's confirmed state; readiness is not a pill color taxonomy. Mobile rows stack with readable actions.
+
+**Draft field:** transparent textarea with Field Border stroke, 20px padding, 180px minimum height, vertical resize and coral caret. Placeholder/help use Muted Ink; validation is explicit Error text. A trimmed minimum of ten characters produces a local preview preserving line breaks and wrapping long text. Nothing is submitted or stored. At 700px the field uses 16px padding/type and the action fills its width.
+
+### Shared comparison navigation
+
+All three pages show native reciprocal links for C — AI Agency, A — Revenue OS and B — Sales Journey. The active page is underlined and bold with `aria-current="page"`. Links have 44px minimum height, 12px/1.3 type, 7px gap and 10px horizontal padding. Hover uses Comparison Hover; focus is a 2px ink outline inset 2px. At 600px type becomes 11px, gap 4px and inset 6px. The label is 11px Muted Ink; letter badges are 750 weight.
+
 ## Do's and Don'ts
 
 ### Do:
@@ -382,5 +609,14 @@ Keyboard focus uses a 3px outline with 5px offset: violet on light fields, paper
 - **Don't** load the two concepts' global styles together or extend C's compressed display and square fields into A.
 - **Don't** present the synthetic workspace, local reveal or draft preview as integration, task creation or message delivery.
 - **Don't** publish review images as application content or claim the failed font-ranking run passed.
+
+### B — Sales Journey and comparison guardrails
+
+- **Do** keep B's ivory, ink and coral folio scoped to its entry, with complete chapter text and a persistent synthetic company.
+- **Do** preserve native stage selection, visible context-aware focus, reduced motion and honest product readiness.
+- **Do** keep reciprocal comparison links in normal flow above all three concepts.
+- **Don't** turn compressed opening typography into the chapter or form reading style.
+- **Don't** imply that the synthetic fourth stage closes a sale, or that the local draft sends a message.
+- **Don't** serve the generated comp, review captures or their incidental grain as application assets.
 
 Not canonized: source declaration overrides and a noninteractive functional recommendation label are existing implementation details, not reusable heading styles. The documentation pass does not repair source or establish new performance/accessibility results.

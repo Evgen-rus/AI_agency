@@ -10,6 +10,7 @@
       "vite.config.ts",
       "biome.json",
       "revenue-os/index.html",
+      "sales-journey/index.html",
       "!!**/.sites",
       "!!**/.sites-runtime"
     ]

@@ -1,6 +1,7 @@
 import type { FormEvent } from 'react';
 import { useRef, useState } from 'react';
 import './styles.css';
+import ConceptNav from './ConceptNav';
 import { products } from './products';
 
 function Arrow() {
@@ -43,6 +44,7 @@ export default function App() {
 
   return (
     <>
+      <ConceptNav active="c" />
       <a className="skip-link" href="#products">
         К решениям
       </a>

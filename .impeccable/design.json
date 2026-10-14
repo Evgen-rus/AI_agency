@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T13:13:42.181Z",
-  "title": "Design System: LeadGenBureau — C AI Agency and A Revenue OS",
+  "generatedAt": "2026-10-14T14:13:07.083Z",
+  "title": "Design System: LeadGenBureau — C AI Agency, A Revenue OS and B Sales Journey",
   "extensions": {
     "colorMeta": {
       "plum": {
@@ -591,6 +591,216 @@
           "oklch(84% 0.1806 17.79)",
           "oklch(95% 0.1806 17.79)"
         ]
+      },
+      "b-coral": {
+        "role": "primary",
+        "displayName": "B Coral",
+        "tonalRamp": [
+          "oklch(15% 0.1508 32.18)",
+          "oklch(26% 0.1508 32.18)",
+          "oklch(38% 0.1508 32.18)",
+          "oklch(49% 0.1508 32.18)",
+          "oklch(61% 0.1508 32.18)",
+          "oklch(72% 0.1508 32.18)",
+          "oklch(84% 0.1508 32.18)",
+          "oklch(95% 0.1508 32.18)"
+        ]
+      },
+      "b-paper": {
+        "role": "neutral",
+        "displayName": "B Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0119 79.78)",
+          "oklch(26% 0.0119 79.78)",
+          "oklch(38% 0.0119 79.78)",
+          "oklch(49% 0.0119 79.78)",
+          "oklch(61% 0.0119 79.78)",
+          "oklch(72% 0.0119 79.78)",
+          "oklch(84% 0.0119 79.78)",
+          "oklch(95% 0.0119 79.78)"
+        ]
+      },
+      "b-ink": {
+        "role": "neutral",
+        "displayName": "B Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0095 88.77)",
+          "oklch(26% 0.0095 88.77)",
+          "oklch(38% 0.0095 88.77)",
+          "oklch(49% 0.0095 88.77)",
+          "oklch(61% 0.0095 88.77)",
+          "oklch(72% 0.0095 88.77)",
+          "oklch(84% 0.0095 88.77)",
+          "oklch(95% 0.0095 88.77)"
+        ]
+      },
+      "b-muted": {
+        "role": "neutral",
+        "displayName": "B Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0164 88.77)",
+          "oklch(26% 0.0164 88.77)",
+          "oklch(38% 0.0164 88.77)",
+          "oklch(49% 0.0164 88.77)",
+          "oklch(61% 0.0164 88.77)",
+          "oklch(72% 0.0164 88.77)",
+          "oklch(84% 0.0164 88.77)",
+          "oklch(95% 0.0164 88.77)"
+        ]
+      },
+      "b-intro-rule": {
+        "role": "neutral",
+        "displayName": "B Intro Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0161 86.43)",
+          "oklch(26% 0.0161 86.43)",
+          "oklch(38% 0.0161 86.43)",
+          "oklch(49% 0.0161 86.43)",
+          "oklch(61% 0.0161 86.43)",
+          "oklch(72% 0.0161 86.43)",
+          "oklch(84% 0.0161 86.43)",
+          "oklch(95% 0.0161 86.43)"
+        ]
+      },
+      "b-dark-rule": {
+        "role": "neutral",
+        "displayName": "B Dark Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0180 91.62)",
+          "oklch(26% 0.0180 91.62)",
+          "oklch(38% 0.0180 91.62)",
+          "oklch(49% 0.0180 91.62)",
+          "oklch(61% 0.0180 91.62)",
+          "oklch(72% 0.0180 91.62)",
+          "oklch(84% 0.0180 91.62)",
+          "oklch(95% 0.0180 91.62)"
+        ]
+      },
+      "b-disclosure": {
+        "role": "neutral",
+        "displayName": "B Disclosure",
+        "tonalRamp": [
+          "oklch(15% 0.0161 86.44)",
+          "oklch(26% 0.0161 86.44)",
+          "oklch(38% 0.0161 86.44)",
+          "oklch(49% 0.0161 86.44)",
+          "oklch(61% 0.0161 86.44)",
+          "oklch(72% 0.0161 86.44)",
+          "oklch(84% 0.0161 86.44)",
+          "oklch(95% 0.0161 86.44)"
+        ]
+      },
+      "b-light-coral": {
+        "role": "neutral",
+        "displayName": "B Light Coral",
+        "tonalRamp": [
+          "oklch(15% 0.1196 32.72)",
+          "oklch(26% 0.1196 32.72)",
+          "oklch(38% 0.1196 32.72)",
+          "oklch(49% 0.1196 32.72)",
+          "oklch(61% 0.1196 32.72)",
+          "oklch(72% 0.1196 32.72)",
+          "oklch(84% 0.1196 32.72)",
+          "oklch(95% 0.1196 32.72)"
+        ]
+      },
+      "b-rule": {
+        "role": "neutral",
+        "displayName": "B Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0204 80.09)",
+          "oklch(26% 0.0204 80.09)",
+          "oklch(38% 0.0204 80.09)",
+          "oklch(49% 0.0204 80.09)",
+          "oklch(61% 0.0204 80.09)",
+          "oklch(72% 0.0204 80.09)",
+          "oklch(84% 0.0204 80.09)",
+          "oklch(95% 0.0204 80.09)"
+        ]
+      },
+      "b-dark-copy": {
+        "role": "neutral",
+        "displayName": "B Dark Copy",
+        "tonalRamp": [
+          "oklch(15% 0.0169 79.34)",
+          "oklch(26% 0.0169 79.34)",
+          "oklch(38% 0.0169 79.34)",
+          "oklch(49% 0.0169 79.34)",
+          "oklch(61% 0.0169 79.34)",
+          "oklch(72% 0.0169 79.34)",
+          "oklch(84% 0.0169 79.34)",
+          "oklch(95% 0.0169 79.34)"
+        ]
+      },
+      "b-catalog-rule": {
+        "role": "neutral",
+        "displayName": "B Catalog Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0180 82.78)",
+          "oklch(26% 0.0180 82.78)",
+          "oklch(38% 0.0180 82.78)",
+          "oklch(49% 0.0180 82.78)",
+          "oklch(61% 0.0180 82.78)",
+          "oklch(72% 0.0180 82.78)",
+          "oklch(84% 0.0180 82.78)",
+          "oklch(95% 0.0180 82.78)"
+        ]
+      },
+      "b-field-border": {
+        "role": "neutral",
+        "displayName": "B Field Border",
+        "tonalRamp": [
+          "oklch(15% 0.0209 80.08)",
+          "oklch(26% 0.0209 80.08)",
+          "oklch(38% 0.0209 80.08)",
+          "oklch(49% 0.0209 80.08)",
+          "oklch(61% 0.0209 80.08)",
+          "oklch(72% 0.0209 80.08)",
+          "oklch(84% 0.0209 80.08)",
+          "oklch(95% 0.0209 80.08)"
+        ]
+      },
+      "b-error": {
+        "role": "neutral",
+        "displayName": "B Error",
+        "tonalRamp": [
+          "oklch(15% 0.1515 30.80)",
+          "oklch(26% 0.1515 30.80)",
+          "oklch(38% 0.1515 30.80)",
+          "oklch(49% 0.1515 30.80)",
+          "oklch(61% 0.1515 30.80)",
+          "oklch(72% 0.1515 30.80)",
+          "oklch(84% 0.1515 30.80)",
+          "oklch(95% 0.1515 30.80)"
+        ]
+      },
+      "b-white": {
+        "role": "neutral",
+        "displayName": "B White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "comparison-hover": {
+        "role": "neutral",
+        "displayName": "Comparison Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0162 82.79)",
+          "oklch(26% 0.0162 82.79)",
+          "oklch(38% 0.0162 82.79)",
+          "oklch(49% 0.0162 82.79)",
+          "oklch(61% 0.0162 82.79)",
+          "oklch(72% 0.0162 82.79)",
+          "oklch(84% 0.0162 82.79)",
+          "oklch(95% 0.0162 82.79)"
+        ]
       }
     },
     "typographyMeta": {
@@ -629,6 +839,74 @@
       "a-note": {
         "displayName": "A note",
         "purpose": "Revenue OS demonstration disclosure: fixed 13px; independent of proportional desktop geometry."
+      },
+      "b-display": {
+        "displayName": "B Display",
+        "purpose": "Three-line compressed editorial hero; scaleX(.78)."
+      },
+      "b-intro": {
+        "displayName": "B Intro",
+        "purpose": "Opening introduction; desktop scaleX(.86), normal at 1100px."
+      },
+      "b-company": {
+        "displayName": "B Company",
+        "purpose": "Persistent synthetic company in the dark scene."
+      },
+      "b-scene": {
+        "displayName": "B Scene",
+        "purpose": "Changing scene title; desktop scaleX(.83)."
+      },
+      "b-explanation": {
+        "displayName": "B Explanation",
+        "purpose": "Scrollytelling section heading."
+      },
+      "b-context": {
+        "displayName": "B Context",
+        "purpose": "Sticky company context title."
+      },
+      "b-headline": {
+        "displayName": "B Headline",
+        "purpose": "Product catalog and discussion headings."
+      },
+      "b-chapter": {
+        "displayName": "B Chapter",
+        "purpose": "Chapter headlines, bounded at 650px."
+      },
+      "b-product-title": {
+        "displayName": "B Product Title",
+        "purpose": "Ruled catalog product title."
+      },
+      "b-body": {
+        "displayName": "B Body",
+        "purpose": "Chapter, catalog introduction and discussion copy."
+      },
+      "b-product-body": {
+        "displayName": "B Product Body",
+        "purpose": "Catalog row explanations."
+      },
+      "b-field": {
+        "displayName": "B Field",
+        "purpose": "Local draft textarea."
+      },
+      "b-note": {
+        "displayName": "B Note",
+        "purpose": "Disclaimers and secondary context."
+      },
+      "b-help": {
+        "displayName": "B Help",
+        "purpose": "Draft help text."
+      },
+      "b-rail": {
+        "displayName": "B Rail",
+        "purpose": "Four-stage native rail labels."
+      },
+      "comparison-label": {
+        "displayName": "Comparison Label",
+        "purpose": "Shared comparison-strip label."
+      },
+      "comparison-link": {
+        "displayName": "Comparison Link",
+        "purpose": "Shared concept links; 11px below 600px."
       }
     },
     "shadows": [],
@@ -657,6 +935,11 @@
         "name": "a-recommendation",
         "value": "350ms cubic-bezier(0.16, 1, 0.3, 1)",
         "purpose": "A clipped content update; removed with reduced-motion."
+      },
+      {
+        "name": "b-state-reveal",
+        "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Scene/context blur(2px)-to-blur(0) reveal; removed with reduced motion."
       }
     ],
     "breakpoints": [
@@ -687,6 +970,22 @@
       {
         "name": "a-industry-constrained",
         "value": "901px–1350px"
+      },
+      {
+        "name": "b-1100",
+        "value": "1100px"
+      },
+      {
+        "name": "b-700",
+        "value": "700px"
+      },
+      {
+        "name": "b-360",
+        "value": "360px"
+      },
+      {
+        "name": "comparison-mobile",
+        "value": "600px"
       }
     ]
   },
@@ -806,11 +1105,67 @@
       "description": "Owner-approved comp override: short downward arrow in normal flow between situation table and recommendation; visible at every width.",
       "html": "<div class=\"ds-a-flow\" aria-hidden=\"true\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M12 3v18m-5-5 5 5 5-5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div>",
       "css": ".ds-a-flow{display:flex;align-items:center;justify-content:center;height:calc(36 * var(--r-unit,1px));min-height:32px;color:#4b91ff}"
+    },
+    {
+      "name": "B Primary Action",
+      "kind": "button",
+      "refersTo": "b-button-primary",
+      "description": "Square ink action on ivory; coral hover.",
+      "html": "<button class=\"ds-b-focus ds-b-primary\">Обсудить задачу</button>",
+      "css": ".ds-b-primary{background:#272520;color:#f3eee6;border:0;border-radius:0;min-height:48px;padding:20px 32px;font:700 16px Montserrat,sans-serif;cursor:pointer}.ds-b-primary:hover{background:#b74632;color:white}.ds-b-focus:focus-visible{outline:3px solid #b74632;outline-offset:5px}"
+    },
+    {
+      "name": "B Outline Action",
+      "kind": "button",
+      "refersTo": "b-button-outline",
+      "description": "Transparent ruled header action.",
+      "html": "<a class=\"ds-b-focus ds-b-outline\" href=\"#\">Обсудить задачу</a>",
+      "css": ".ds-b-outline{display:inline-flex;align-items:center;min-height:48px;padding:14px 26px;border:1px solid #272520;background:transparent;color:#272520;text-decoration:none;font:500 16px Montserrat,sans-serif}.ds-b-outline:hover{background:#b74632;color:white}.ds-b-focus:focus-visible{outline:3px solid #b74632;outline-offset:5px}"
+    },
+    {
+      "name": "B Stage Station",
+      "kind": "button",
+      "refersTo": "b-stage-control",
+      "description": "Native stage selector with coral selected circle and outgoing rail.",
+      "html": "<button class=\"ds-b-focus ds-b-stage\" aria-pressed=\"true\"><span>01</span>Сигнал</button>",
+      "css": ".ds-b-stage{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;background:#f3eee6;color:#272520;border:0;padding:0;width:180px;font:600 21px Montserrat,sans-serif;cursor:pointer}.ds-b-stage:before{content:\"\";position:absolute;height:1px;background:#272520;top:30px;left:50%;width:100%}.ds-b-stage span{position:relative;display:grid;place-items:center;width:62px;height:62px;border:1px solid #272520;border-radius:50%;background:#f3eee6;font-size:20px}.ds-b-stage[aria-pressed=true]{color:#b74632}.ds-b-stage[aria-pressed=true]:before{background:#b74632}.ds-b-stage[aria-pressed=true] span{background:#b74632;border-color:#b74632;color:white}.ds-b-focus:focus-visible{outline:3px solid #b74632;outline-offset:5px}"
+    },
+    {
+      "name": "B Local Draft Field",
+      "kind": "input",
+      "refersTo": "b-input-task",
+      "description": "Transparent resizable task field; local feedback.",
+      "html": "<label class=\"ds-b-label\" for=\"ds-b-task\">Кратко опишите задачу</label><textarea class=\"ds-b-focus ds-b-task\" id=\"ds-b-task\" placeholder=\"Что нужно улучшить в продажах?\"></textarea>",
+      "css": ".ds-b-label{display:block;margin-bottom:20px;color:#272520;font:600 20px Montserrat,sans-serif}.ds-b-task{width:100%;min-height:180px;padding:20px;resize:vertical;border:1px solid #9e9689;background:transparent;color:#272520;caret-color:#b74632;font:400 18px/1.6 Montserrat,sans-serif}.ds-b-task::placeholder{color:#625e54}.ds-b-focus:focus-visible{outline:3px solid #b74632;outline-offset:5px}"
+    },
+    {
+      "name": "B Synthetic Scene",
+      "kind": "custom",
+      "refersTo": "b-demo-panel",
+      "description": "Flat dark company scene with immediate synthetic disclosure.",
+      "html": "<section class=\"ds-b-scene\"><div><h2>Компания Север</h2><p>Демонстрационный сценарий · данные вымышлены</p></div><h3>Интерес ещё не означает готовность купить.</h3></section>",
+      "css": ".ds-b-scene{display:grid;grid-template-columns:49.2% 50.8%;padding:60px 56px 22px;background:#272520;color:#f3eee6;font-family:Montserrat,sans-serif}.ds-b-scene h2{margin:0;font-size:70px;font-weight:800;line-height:1.1;letter-spacing:-.04em}.ds-b-scene p{margin:18px 0 0;color:#c9c4b9;font-size:18px}.ds-b-scene h3{margin:0;padding-left:32px;font-size:54px;font-weight:800;line-height:1.12;letter-spacing:-.03em;width:120%;transform:scaleX(.83);transform-origin:left}@media(max-width:700px){.ds-b-scene{display:block;padding:32px 20px 24px}.ds-b-scene h2{font-size:36px}.ds-b-scene p{font-size:12px;line-height:1.6}.ds-b-scene h3{font-size:30px;line-height:1.15;margin-top:28px;padding:0;width:auto;transform:none}}"
+    },
+    {
+      "name": "B Catalog Row",
+      "kind": "custom",
+      "refersTo": "b-product-row",
+      "description": "Ruled dark product row with textual readiness.",
+      "html": "<article class=\"ds-b-row\"><div><h3>NeuroROP</h3><span>Пилотное развитие</span></div><p>Помощь менеджеру со следующим действием.</p><a href=\"#\">Обсудить задачу</a></article>",
+      "css": ".ds-b-row{display:grid;grid-template-columns:30% 42% 28%;padding:40px 0;border-top:1px solid #817b70;background:#272520;color:#f3eee6;font-family:Montserrat,sans-serif}.ds-b-row h3{margin:0 0 14px;font-size:25px;line-height:1.3}.ds-b-row span{font-size:14px;color:#ef907c}.ds-b-row p{margin:0;padding-right:36px;font-size:17px;line-height:1.7}.ds-b-row a{display:flex;align-items:center;justify-self:end;min-height:44px;color:inherit;text-decoration:none;font-size:16px}.ds-b-row a:hover{color:#ef907c}.ds-b-row a:focus-visible{outline:3px solid #ef907c;outline-offset:5px}@media(max-width:700px){.ds-b-row{display:block;padding:32px 0}.ds-b-row h3{font-size:24px}.ds-b-row p{padding:0;margin-top:24px;font-size:16px}.ds-b-row a{margin-top:20px}}"
+    },
+    {
+      "name": "Shared Comparison Strip",
+      "kind": "nav",
+      "refersTo": "comparison-navigation",
+      "description": "Reciprocal concept links in normal flow above each page.",
+      "html": "<nav class=\"ds-comparison\" aria-label=\"Сравнить концепции\"><span>Сравнить концепции</span><div><a href=\"/\">C AI Agency</a><a href=\"/revenue-os/\">A Revenue OS</a><a href=\"/sales-journey/\" aria-current=\"page\">B Sales Journey</a></div></nav>",
+      "css": ".ds-comparison{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:8px 24px;background:#f3eee6;color:#272520;border-bottom:1px solid #b7afa2;font:400 12px Montserrat,sans-serif;letter-spacing:normal}.ds-comparison>span{padding:0 8px;font-size:11px;color:#625e54}.ds-comparison>div{display:flex}.ds-comparison a{display:flex;align-items:center;gap:7px;min-height:44px;padding:0 10px;line-height:1.3;color:#272520;text-decoration:none}.ds-comparison a[aria-current=page]{text-decoration:underline;text-underline-offset:5px;font-weight:700}.ds-comparison a:hover{background:#e4ded3}.ds-comparison a:focus-visible{outline:2px solid #272520;outline-offset:-2px}@media(max-width:600px){.ds-comparison{display:block;padding:8px 8px 2px}.ds-comparison>div{justify-content:space-between}.ds-comparison a{font-size:11px;padding:0 6px;gap:4px}}"
     }
   ],
   "narrative": {
-    "northStar": "AI Agency — typographic index; Revenue OS — revenue control-room (A only)",
-    "overview": "The approved C world uses dense Montserrat lettering, large uninterrupted color fields and sharply cut geometric letterforms. The visual tone is assertive and editorial; information is organized by type, space and color rather than floating boxes.\n\nThe current identity is LeadGenBureau. Russian copy and honest readiness labels remain legible parts of the composition. The visual system does not imply a unified production platform or verified commercial results.\n\nA is an independent Revenue OS world at `/revenue-os/`: daylight reading ground, midnight focused workspace and precise cobalt controls. Its control-room metaphor exposes a contact, risk and proposed next action without implying a live integrated platform. It shares the self-hosted Montserrat font and confirmed product facts with C, not C's visual composition.\n\n`src/main.tsx` dynamically imports `RevenueApp` with `revenue.css` for A and `App` with `styles.css` for C at `/`. Each entry has its own global styles; never load both stylesheets into one rendered page. All unprefixed frontmatter tokens and the incumbent prose describe C; all `a-` tokens and Revenue OS subsections describe A. The preserved C records are in `.impeccable/archive/concept-c/`.\n\nA follows the approved delegated composition `.impeccable/mocks/revenue-os/command.png`. The owner's later screenshot correction overrides its ambiguous long connector: a short downward SVG now connects the situation table to the recommendation in normal flow at every width. Review images, if present at `.impeccable/review/revenue-os/desktop.png` and `mobile.png`, are evidence rather than application assets. No raster is shipped; the only bundled visual asset is Montserrat with its license. The CLI font-ranking browser resolution failed; Montserrat is an intentional comp match, not a passed font-ranking result. No separate Revenue OS quality bar is established.",
+    "northStar": "AI Agency — typographic index; Revenue OS — revenue control-room (A only); Sales Journey — editorial process folio (B only)",
+    "overview": "The approved C world uses dense Montserrat lettering, large uninterrupted color fields and sharply cut geometric letterforms. The visual tone is assertive and editorial; information is organized by type, space and color rather than floating boxes.\n\nThe current identity is LeadGenBureau. Russian copy and honest readiness labels remain legible parts of the composition. The visual system does not imply a unified production platform or verified commercial results.\n\nA is an independent Revenue OS world at `/revenue-os/`: daylight reading ground, midnight focused workspace and precise cobalt controls. Its control-room metaphor exposes a contact, risk and proposed next action without implying a live integrated platform. It shares the self-hosted Montserrat font and confirmed product facts with C, not C's visual composition.\n\n`src/main.tsx` dynamically imports `RevenueApp` with `revenue.css` for A and `App` with `styles.css` for C at `/`. Each entry has its own global styles; never load both stylesheets into one rendered page. All unprefixed frontmatter tokens and the incumbent prose describe C; all `a-` tokens and Revenue OS subsections describe A. The preserved C records are in `.impeccable/archive/concept-c/`.\n\nA follows the approved delegated composition `.impeccable/mocks/revenue-os/command.png`. The owner's later screenshot correction overrides its ambiguous long connector: a short downward SVG now connects the situation table to the recommendation in normal flow at every width. Review images, if present at `.impeccable/review/revenue-os/desktop.png` and `mobile.png`, are evidence rather than application assets. No raster is shipped; the only bundled visual asset is Montserrat with its license. The CLI font-ranking browser resolution failed; Montserrat is an intentional comp match, not a passed font-ranking result. No separate Revenue OS quality bar is established.\n\nB is an independent world at `/sales-journey/`: warm ivory, near-black ink and restrained burnt coral, with a flat four-station process rail and massive compressed Montserrat. Its synthetic company persists through the scene and contextual chapters. It shares confirmed product content and the self-hosted font with A/C. All `b-` tokens describe B; `comparison-` tokens describe the shared strip. `JourneyApp` and `journey.css` load only for B. Existing unprefixed and A tokens remain scoped as described above.\n\nThe approved `.impeccable/mocks/sales-journey/folio.png` is development evidence, never page imagery. Ivory is a flat field, without the generated comp's incidental grain. No raster ships; the bundled font and license are reused. The review adaptation places the shared comparison strip in normal flow above each page, moves synthetic disclosure directly after the company name, removes the line above the contextual company title and colors the active rail segment coral.",
     "keyCharacteristics": [
       "Flat plum, violet, cobalt and paper fields.",
       "Dense grotesque typography with tightly tracked headings.",
@@ -819,7 +1174,11 @@
       "Daylight page and dark focused console.",
       "Geometric Montserrat display with fine rules and structured table content.",
       "Cobalt native controls, a connected stage path and textual readiness with three distinct dots.",
-      "Local demonstration and draft preparation with explicit limits."
+      "Local demonstration and draft preparation with explicit limits.",
+      "Warm ivory reading ground, near-black demonstration and catalog fields.",
+      "Massive compressed display, fine rules and a four-station coral selection.",
+      "Sticky sequence and desktop context with ordinary scrolling and complete chapter text.",
+      "Explicit synthetic disclosure, textual product readiness and local draft preview."
     ],
     "rules": [
       {
@@ -828,19 +1187,34 @@
         "section": "colors"
       },
       {
+        "name": "The Focused Console Rule",
+        "body": "In A, Midnight identifies the demonstration or approach context; white surfaces carry the contact and recommendation inside it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Folio Contrast Rule",
+        "body": "In B, use Burnt Coral on ivory and Light Coral on ink; preserve textual selection and readiness alongside color.",
+        "section": "colors"
+      },
+      {
         "name": "The Display Exception Rule",
         "body": "Preserve the approved oversized hero on this surface; use the bounded section-heading ramp for ordinary extensions.",
         "section": "typography"
       },
       {
+        "name": "The Folio Display Rule",
+        "body": "Reserve horizontal compression for the approved opening and desktop scene; use ordinary readable Montserrat for chapters, context and controls.",
+        "section": "typography"
+      },
+      {
+        "name": "The In-Flow Comparison Rule",
+        "body": "Keep reciprocal concept navigation above the page in normal flow; never make it fixed or overlay page content.",
+        "section": "layout"
+      },
+      {
         "name": "The Flat Field Rule",
         "body": "Preserve solid field separation and do not add floating shadows to the existing components.",
         "section": "elevation"
-      },
-      {
-        "name": "The Focused Console Rule",
-        "body": "In A, Midnight identifies the demonstration or approach context; white surfaces carry the contact and recommendation inside it.",
-        "section": "colors"
       }
     ],
     "dos": [
@@ -850,7 +1224,10 @@
       "Do use the existing mobile stacking and two-column index rather than shrinking desktop controls indefinitely.",
       "Do keep A's daylight reading ground, focused dark console and cobalt selected/action states scoped to its entry.",
       "Do preserve the text accompanying every readiness dot, risk marker and stage selection.",
-      "Do retain native semantic controls, visible context-aware focus and reduced-motion behavior."
+      "Do retain native semantic controls, visible context-aware focus and reduced-motion behavior.",
+      "Do keep B's ivory, ink and coral folio scoped to its entry, with complete chapter text and a persistent synthetic company.",
+      "Do preserve native stage selection, visible context-aware focus, reduced motion and honest product readiness.",
+      "Do keep reciprocal comparison links in normal flow above all three concepts."
     ],
     "donts": [
       "Don't turn the pinned hero sizing and compression into a default for every heading.",
@@ -859,7 +1236,10 @@
       "Don't serve review evidence or mock images as application content.",
       "Don't load the two concepts' global styles together or extend C's compressed display and square fields into A.",
       "Don't present the synthetic workspace, local reveal or draft preview as integration, task creation or message delivery.",
-      "Don't publish review images as application content or claim the failed font-ranking run passed."
+      "Don't publish review images as application content or claim the failed font-ranking run passed.",
+      "Don't turn compressed opening typography into the chapter or form reading style.",
+      "Don't imply that the synthetic fourth stage closes a sale, or that the local draft sends a message.",
+      "Don't serve the generated comp, review captures or their incidental grain as application assets."
     ]
   }
 }
