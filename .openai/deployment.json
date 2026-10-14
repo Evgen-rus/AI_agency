@@ -1,0 +1,11 @@
+{
+  "project_id": "appgprj_6acf5948b3048191a5f50135a32ea2dc",
+  "version_id": "appgprj_6acf5948b3048191a5f50135a32ea2dc~appgver_c39d327247908191b33a6aa795ea2f30",
+  "deployment_id": "appgdep_6acf802950648191ab9f33a78e0f496d",
+  "status": "succeeded",
+  "url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site",
+  "commit_sha": "3c31756bc43cd365fa891402bfdbde8ad4bc8a27",
+  "revenue_url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site/revenue-os/",
+  "access": "public",
+  "updated_at": "2026-10-14T13:14:33.970921+00:00"
+}

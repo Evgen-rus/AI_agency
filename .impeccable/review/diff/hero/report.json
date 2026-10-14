@@ -1,0 +1,997 @@
+{
+  "tool": "comp-diff",
+  "version": 1,
+  "createdAt": "2026-10-14T10:57:48.565Z",
+  "label": "hero",
+  "comp": ".impeccable/mocks/revenue-os/command.png",
+  "build": ".impeccable/review/hero-repro.png",
+  "spec": ".impeccable/build/spec.json",
+  "compSize": "1536x1024",
+  "buildSize": "1536x1024",
+  "align": "top",
+  "overall": 0.9049,
+  "verdict": "match",
+  "scores": {
+    "overall": 0.9049,
+    "structure": 0.9152,
+    "color": 0.9071,
+    "colorIntersection": 0.8213,
+    "paletteMatch": 0.9534,
+    "detail": 0.8313,
+    "detailRaw": 0.8313,
+    "detailAdded": 0,
+    "bands": 1
+  },
+  "palette": {
+    "comp": [
+      {
+        "hex": "#f8f8f8",
+        "coverage": 0.7669
+      },
+      {
+        "hex": "#121d3a",
+        "coverage": 0.1721
+      },
+      {
+        "hex": "#0d4df3",
+        "coverage": 0.0305
+      },
+      {
+        "hex": "#23384b",
+        "coverage": 0.011
+      },
+      {
+        "hex": "#828ca3",
+        "coverage": 0.0108
+      },
+      {
+        "hex": "#505c76",
+        "coverage": 0.0086
+      }
+    ],
+    "build": [
+      {
+        "hex": "#f8f8f8",
+        "coverage": 0.7638
+      },
+      {
+        "hex": "#181a3a",
+        "coverage": 0.1668
+      },
+      {
+        "hex": "#0848f8",
+        "coverage": 0.0384
+      },
+      {
+        "hex": "#283848",
+        "coverage": 0.0272
+      },
+      {
+        "hex": "#5c6c7c",
+        "coverage": 0.0034
+      },
+      {
+        "hex": "#6888f8",
+        "coverage": 0.0005
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": "wordmark",
+      "x": 0.029,
+      "y": 0.017,
+      "w": 0.141,
+      "h": 0.033,
+      "kind": "text",
+      "score": {
+        "overall": 0.7728,
+        "structure": 0.7134,
+        "color": 0.8301,
+        "colorIntersection": 0.7816,
+        "paletteMatch": 0.8562,
+        "detail": 0.764,
+        "detailRaw": 0.7692,
+        "detailAdded": 0.0104,
+        "bands": 0.94
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 9,
+          "w": 209,
+          "h": 23
+        },
+        "build": {
+          "x": 1,
+          "y": 12,
+          "w": 212,
+          "h": 21
+        }
+      }
+    },
+    {
+      "id": "nav",
+      "x": 0.199,
+      "y": 0.022,
+      "w": 0.143,
+      "h": 0.022,
+      "kind": "control",
+      "score": {
+        "overall": 0.8119,
+        "structure": 0.8462,
+        "color": 0.9451,
+        "colorIntersection": 0.9205,
+        "paletteMatch": 0.9584,
+        "detail": 0.5014,
+        "detailRaw": 0.5222,
+        "detailAdded": 0.0417,
+        "bands": 0.75
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 6,
+          "y": 16,
+          "w": 204,
+          "h": 15
+        },
+        "build": {
+          "x": 8,
+          "y": 18,
+          "w": 165,
+          "h": 12
+        }
+      }
+    },
+    {
+      "id": "nav-secondary",
+      "x": 0.708,
+      "y": 0.022,
+      "w": 0.13,
+      "h": 0.022,
+      "kind": "control",
+      "score": {
+        "overall": 0.7762,
+        "structure": 0.7835,
+        "color": 0.9176,
+        "colorIntersection": 0.9121,
+        "paletteMatch": 0.9206,
+        "detail": 0.512,
+        "detailRaw": 0.5432,
+        "detailAdded": 0.0625,
+        "bands": 0.88
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 3,
+          "y": 16,
+          "w": 189,
+          "h": 15
+        },
+        "build": {
+          "x": 35,
+          "y": 19,
+          "w": 145,
+          "h": 12
+        }
+      }
+    },
+    {
+      "id": "header-action",
+      "x": 0.86,
+      "y": 0.01,
+      "w": 0.112,
+      "h": 0.043,
+      "kind": "control",
+      "score": {
+        "overall": 0.7498,
+        "structure": 0.9314,
+        "color": 0.439,
+        "colorIntersection": 0.2786,
+        "paletteMatch": 0.5254,
+        "detail": 0.8849,
+        "detailRaw": 0.8849,
+        "detailAdded": 0,
+        "bands": 0.94
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 172,
+          "h": 48
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 172,
+          "h": 48
+        }
+      }
+    },
+    {
+      "id": "headline",
+      "x": 0.028,
+      "y": 0.154,
+      "w": 0.37,
+      "h": 0.14,
+      "kind": "text",
+      "score": {
+        "overall": 0.7463,
+        "structure": 0.6682,
+        "color": 0.7983,
+        "colorIntersection": 0.6871,
+        "paletteMatch": 0.8582,
+        "detail": 0.7816,
+        "detailRaw": 0.7816,
+        "detailAdded": 0,
+        "bands": 0.9538
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 7,
+          "w": 568,
+          "h": 136
+        },
+        "build": {
+          "x": 3,
+          "y": 12,
+          "w": 554,
+          "h": 131
+        }
+      }
+    },
+    {
+      "id": "deck",
+      "x": 0.029,
+      "y": 0.331,
+      "w": 0.358,
+      "h": 0.106,
+      "kind": "text",
+      "score": {
+        "overall": 0.769,
+        "structure": 0.7033,
+        "color": 0.8909,
+        "colorIntersection": 0.8208,
+        "paletteMatch": 0.9287,
+        "detail": 0.711,
+        "detailRaw": 0.7735,
+        "detailAdded": 0.125,
+        "bands": 0.88
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 5,
+          "w": 507,
+          "h": 102
+        },
+        "build": {
+          "x": 0,
+          "y": 9,
+          "w": 516,
+          "h": 98
+        }
+      }
+    },
+    {
+      "id": "primary-action",
+      "x": 0.029,
+      "y": 0.478,
+      "w": 0.201,
+      "h": 0.066,
+      "kind": "control",
+      "score": {
+        "overall": 0.6996,
+        "structure": 0.7118,
+        "color": 0.7468,
+        "colorIntersection": 0.5674,
+        "paletteMatch": 0.8433,
+        "detail": 0.5895,
+        "detailRaw": 0.6155,
+        "detailAdded": 0.0521,
+        "bands": 0.9
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 308,
+          "h": 68
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 308,
+          "h": 68
+        }
+      }
+    },
+    {
+      "id": "workspace-ground",
+      "x": 0.42,
+      "y": 0.093,
+      "w": 0.58,
+      "h": 0.489,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.8178,
+        "structure": 0.8388,
+        "color": 0.7815,
+        "colorIntersection": 0.596,
+        "paletteMatch": 0.8813,
+        "detail": 0.7788,
+        "detailRaw": 0.7788,
+        "detailAdded": 0,
+        "bands": 0.8941
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 891,
+          "h": 501
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 851,
+          "h": 501
+        }
+      }
+    },
+    {
+      "id": "demo-label",
+      "x": 0.441,
+      "y": 0.116,
+      "w": 0.336,
+      "h": 0.018,
+      "kind": "text",
+      "score": {
+        "overall": 0.8717,
+        "structure": 0.962,
+        "color": 0.6612,
+        "colorIntersection": 0.4078,
+        "paletteMatch": 0.7976,
+        "detail": 0.8357,
+        "detailRaw": 0.8357,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 18,
+          "w": 357,
+          "h": 14
+        },
+        "build": {
+          "x": 4,
+          "y": 18,
+          "w": 359,
+          "h": 13
+        }
+      }
+    },
+    {
+      "id": "stages",
+      "x": 0.442,
+      "y": 0.152,
+      "w": 0.532,
+      "h": 0.073,
+      "kind": "control",
+      "score": {
+        "overall": 0.6563,
+        "structure": 0.9089,
+        "color": 0.37,
+        "colorIntersection": 0.0545,
+        "paletteMatch": 0.54,
+        "detail": 0.5887,
+        "detailRaw": 0.6043,
+        "detailAdded": 0.0313,
+        "bands": 0.85
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 0,
+          "w": 788,
+          "h": 74
+        },
+        "build": {
+          "x": 2,
+          "y": 0,
+          "w": 815,
+          "h": 73
+        }
+      }
+    },
+    {
+      "id": "table-head",
+      "x": 0.442,
+      "y": 0.264,
+      "w": 0.532,
+      "h": 0.043,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.768,
+        "structure": 0.9422,
+        "color": 0.7449,
+        "colorIntersection": 0.5838,
+        "paletteMatch": 0.8317,
+        "detail": 0.6479,
+        "detailRaw": 0.674,
+        "detailAdded": 0.0521,
+        "bands": 0.6
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 0,
+          "w": 816,
+          "h": 48
+        },
+        "build": {
+          "x": 2,
+          "y": 19,
+          "w": 815,
+          "h": 29
+        }
+      }
+    },
+    {
+      "id": "table-labels",
+      "x": 0.478,
+      "y": 0.279,
+      "w": 0.452,
+      "h": 0.019,
+      "kind": "text",
+      "score": {
+        "overall": 0.8224,
+        "structure": 0.9469,
+        "color": 0.7621,
+        "colorIntersection": 0.6138,
+        "paletteMatch": 0.8419,
+        "detail": 0.4897,
+        "detailRaw": 0.5313,
+        "detailAdded": 0.0833,
+        "bands": 0.85
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 694,
+          "h": 48
+        },
+        "build": {
+          "x": 0,
+          "y": 16,
+          "w": 694,
+          "h": 32
+        }
+      }
+    },
+    {
+      "id": "table-body",
+      "x": 0.442,
+      "y": 0.307,
+      "w": 0.532,
+      "h": 0.068,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.8618,
+        "structure": 0.9467,
+        "color": 0.9555,
+        "colorIntersection": 0.9237,
+        "paletteMatch": 0.9726,
+        "detail": 0.5664,
+        "detailRaw": 0.5716,
+        "detailAdded": 0.0104,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 817,
+          "h": 70
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 817,
+          "h": 70
+        }
+      }
+    },
+    {
+      "id": "company",
+      "x": 0.479,
+      "y": 0.33,
+      "w": 0.038,
+      "h": 0.019,
+      "kind": "text",
+      "score": {
+        "overall": 0.8285,
+        "structure": 0.8292,
+        "color": 0.9095,
+        "colorIntersection": 0.8764,
+        "paletteMatch": 0.9273,
+        "detail": 0.6438,
+        "detailRaw": 0.6438,
+        "detailAdded": 0,
+        "bands": 0.9
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 19,
+          "w": 45,
+          "h": 15
+        },
+        "build": {
+          "x": 1,
+          "y": 20,
+          "w": 40,
+          "h": 12
+        }
+      }
+    },
+    {
+      "id": "industry",
+      "x": 0.549,
+      "y": 0.33,
+      "w": 0.076,
+      "h": 0.019,
+      "kind": "text",
+      "score": {
+        "overall": 0.8083,
+        "structure": 0.7857,
+        "color": 0.9194,
+        "colorIntersection": 0.8912,
+        "paletteMatch": 0.9346,
+        "detail": 0.5704,
+        "detailRaw": 0.5704,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 4,
+          "y": 19,
+          "w": 112,
+          "h": 14
+        },
+        "build": {
+          "x": 20,
+          "y": 20,
+          "w": 97,
+          "h": 12
+        }
+      }
+    },
+    {
+      "id": "deal-status",
+      "x": 0.648,
+      "y": 0.33,
+      "w": 0.042,
+      "h": 0.019,
+      "kind": "text",
+      "score": {
+        "overall": 0.7177,
+        "structure": 0.8169,
+        "color": 0.762,
+        "colorIntersection": 0.5707,
+        "paletteMatch": 0.865,
+        "detail": 0.3647,
+        "detailRaw": 0.3752,
+        "detailAdded": 0.0208,
+        "bands": 0.64
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 10,
+          "y": 19,
+          "w": 48,
+          "h": 13
+        },
+        "build": {
+          "x": 30,
+          "y": 20,
+          "w": 35,
+          "h": 11
+        }
+      }
+    },
+    {
+      "id": "risk",
+      "x": 0.75,
+      "y": 0.326,
+      "w": 0.085,
+      "h": 0.033,
+      "kind": "text",
+      "score": {
+        "overall": 0.7632,
+        "structure": 0.7374,
+        "color": 0.8572,
+        "colorIntersection": 0.8447,
+        "paletteMatch": 0.864,
+        "detail": 0.5848,
+        "detailRaw": 0.59,
+        "detailAdded": 0.0104,
+        "bands": 0.925
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 7,
+          "w": 121,
+          "h": 30
+        },
+        "build": {
+          "x": 3,
+          "y": 8,
+          "w": 126,
+          "h": 27
+        }
+      }
+    },
+    {
+      "id": "recommendation-ground",
+      "x": 0.443,
+      "y": 0.41,
+      "w": 0.531,
+      "h": 0.131,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.6714,
+        "structure": 0.6159,
+        "color": 0.8953,
+        "colorIntersection": 0.83,
+        "paletteMatch": 0.9305,
+        "detail": 0.5949,
+        "detailRaw": 0.699,
+        "detailAdded": 0.2083,
+        "bands": 0.5556
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 816,
+          "h": 134
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 816,
+          "h": 134
+        }
+      }
+    },
+    {
+      "id": "recommendation-label",
+      "x": 0.521,
+      "y": 0.434,
+      "w": 0.179,
+      "h": 0.018,
+      "kind": "text",
+      "score": {
+        "overall": 0.7178,
+        "structure": 0.892,
+        "color": 0.9008,
+        "colorIntersection": 0.817,
+        "paletteMatch": 0.946,
+        "detail": 0.1859,
+        "detailRaw": 0.363,
+        "detailAdded": 0.3542,
+        "bands": 0.1867
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 15,
+          "w": 274,
+          "h": 33
+        },
+        "build": {
+          "x": 0,
+          "y": 11,
+          "w": 275,
+          "h": 37
+        }
+      }
+    },
+    {
+      "id": "recommendation-title",
+      "x": 0.521,
+      "y": 0.459,
+      "w": 0.282,
+      "h": 0.021,
+      "kind": "text",
+      "score": {
+        "overall": 0.6774,
+        "structure": 0.8264,
+        "color": 0.9099,
+        "colorIntersection": 0.8385,
+        "paletteMatch": 0.9484,
+        "detail": 0.1114,
+        "detailRaw": 0.3198,
+        "detailAdded": 0.4167,
+        "bands": 0.2
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 0,
+          "w": 417,
+          "h": 48
+        },
+        "build": {
+          "x": 0,
+          "y": 10,
+          "w": 427,
+          "h": 38
+        }
+      }
+    },
+    {
+      "id": "recommendation-copy",
+      "x": 0.521,
+      "y": 0.489,
+      "w": 0.288,
+      "h": 0.036,
+      "kind": "text",
+      "score": {
+        "overall": 0.7337,
+        "structure": 0.8837,
+        "color": 0.8955,
+        "colorIntersection": 0.8667,
+        "paletteMatch": 0.911,
+        "detail": 0.2845,
+        "detailRaw": 0.3783,
+        "detailAdded": 0.1875,
+        "bands": 0.2533
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 6,
+          "w": 420,
+          "h": 33
+        },
+        "build": {
+          "x": 1,
+          "y": 0,
+          "w": 426,
+          "h": 31
+        }
+      }
+    },
+    {
+      "id": "recommendation-control",
+      "x": 0.821,
+      "y": 0.425,
+      "w": 0.14,
+      "h": 0.096,
+      "kind": "control",
+      "score": {
+        "overall": 0.7388,
+        "structure": 0.7485,
+        "color": 0.7514,
+        "colorIntersection": 0.6017,
+        "paletteMatch": 0.8321,
+        "detail": 0.6948,
+        "detailRaw": 0.7521,
+        "detailAdded": 0.1146,
+        "bands": 0.9
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 1,
+          "w": 215,
+          "h": 82
+        },
+        "build": {
+          "x": 0,
+          "y": 1,
+          "w": 215,
+          "h": 81
+        }
+      }
+    },
+    {
+      "id": "readiness",
+      "x": 0.03,
+      "y": 0.651,
+      "w": 0.903,
+      "h": 0.043,
+      "kind": "text",
+      "score": {
+        "overall": 0.7922,
+        "structure": 0.903,
+        "color": 0.8887,
+        "colorIntersection": 0.8466,
+        "paletteMatch": 0.9114,
+        "detail": 0.4299,
+        "detailRaw": 0.5185,
+        "detailAdded": 0.1771,
+        "bands": 0.54
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 1,
+          "y": 3,
+          "w": 1386,
+          "h": 40
+        },
+        "build": {
+          "x": 0,
+          "y": 8,
+          "w": 1335,
+          "h": 37
+        }
+      }
+    },
+    {
+      "id": "problem-headline",
+      "x": 0.03,
+      "y": 0.802,
+      "w": 0.621,
+      "h": 0.061,
+      "kind": "text",
+      "score": {
+        "overall": 0.7697,
+        "structure": 0.6938,
+        "color": 0.8075,
+        "colorIntersection": 0.6678,
+        "paletteMatch": 0.8827,
+        "detail": 0.8507,
+        "detailRaw": 0.8507,
+        "detailAdded": 0,
+        "bands": 0.9333
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 2,
+          "y": 8,
+          "w": 952,
+          "h": 55
+        },
+        "build": {
+          "x": 3,
+          "y": 10,
+          "w": 951,
+          "h": 53
+        }
+      }
+    },
+    {
+      "id": "problems",
+      "x": 0.03,
+      "y": 0.904,
+      "w": 0.902,
+      "h": 0.06,
+      "kind": "control",
+      "score": {
+        "overall": 0.6654,
+        "structure": 0.7383,
+        "color": 0.8908,
+        "colorIntersection": 0.8489,
+        "paletteMatch": 0.9135,
+        "detail": 0.107,
+        "detailRaw": 0.2164,
+        "detailAdded": 0.2188,
+        "bands": 0.4667
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 3,
+          "y": 3,
+          "w": 1383,
+          "h": 51
+        },
+        "build": {
+          "x": 0,
+          "y": 17,
+          "w": 1361,
+          "h": 17
+        }
+      }
+    },
+    {
+      "id": "page-ground",
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.9049,
+        "structure": 0.9152,
+        "color": 0.9071,
+        "colorIntersection": 0.8213,
+        "paletteMatch": 0.9534,
+        "detail": 0.8313,
+        "detailRaw": 0.8313,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 43,
+          "y": 11,
+          "w": 1493,
+          "h": 969
+        },
+        "build": {
+          "x": 44,
+          "y": 12,
+          "w": 1492,
+          "h": 948
+        }
+      }
+    }
+  ],
+  "files": {
+    "sideBySide": "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/side-by-side.png",
+    "heatmap": "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/heatmap.png",
+    "regionFiles": [
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/wordmark.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/nav.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/nav-secondary.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/header-action.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/headline.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/deck.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/primary-action.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/workspace-ground.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/demo-label.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/stages.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/table-head.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/table-labels.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/table-body.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/company.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/industry.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/deal-status.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/risk.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/recommendation-ground.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/recommendation-label.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/recommendation-title.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/recommendation-copy.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/recommendation-control.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/readiness.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/problem-headline.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/problems.png",
+      "D:/My_dev_project/AI_agency/.impeccable/review/diff/hero/regions/page-ground.png"
+    ]
+  }
+}

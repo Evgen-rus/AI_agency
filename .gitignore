@@ -21,3 +21,7 @@ Thumbs.db
 
 # Local Impeccable runtime download
 .agents/skills/impeccable/scripts/bin/
+
+# Local Sites publishing checkout and archives
+.sites/
+.sites-runtime/
