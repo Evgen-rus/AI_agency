@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-10-15",
+  "tool": "built-in image_gen.imagegen",
+  "useCase": "photorealistic-natural",
+  "disclosure": "Generated illustrative imagery. Neither real client evidence nor photographs of the agency team.",
+  "assets": [
+    {
+      "file": "src/assets/brand/office.webp",
+      "source": ".impeccable/assets/brand/office-source.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium B2B AI agency website atmospheric photograph, landscape 3:2. A sophisticated contemporary office in daylight: large floor-to-ceiling windows, softly lit warm ivory walls, pale oak desk in foreground, open dark slim laptop seen from the side with a blank dark screen, elegant dark green indoor plant on the right. Architectural editorial photography, tactile natural materials, restrained and quietly expensive. No people. Composition: office detail and desk on the right two-thirds, soft pale low-detail negative space toward the left to blend with a white website. Cool daylight with a subtle warm wood counterpoint, charcoal and muted green accents. Natural realistic lens depth, crisp desk, soft background, no dramatic neon. No text, no logos, no UI, no charts, no watermark, no website screenshot. This is a reusable photographic background asset, not a page mockup.",
+      "processing": "ffmpeg: width 1600, WebP quality 84"
+    },
+    {
+      "file": "src/assets/brand/manager.webp",
+      "source": ".impeccable/assets/brand/manager-source.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: vertical photograph in an AI sales product landing page process card. Candid editorial photo of a male sales manager aged about 32 in a modern bright office, wearing a charcoal jacket over white open-collar shirt, seated at desk looking attentively at a laptop and listening on a simple headset. Three-quarter side view, face and hands natural, relaxed professional expression, not looking into camera. Soft window daylight, warm oak desk, muted green plant, creamy neutral background, subtle depth of field, high-end realistic business photography. Portrait composition with face in upper middle, shoulders and laptop visible, suitable for crop 3:4. No logos, no text, no metrics, no graphs, no UI, no watermark, no montage. This is illustrative stock-style imagery, not a real client testimonial.",
+      "processing": "ffmpeg: width 600, WebP quality 84"
+    }
+  ]
+}

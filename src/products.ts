@@ -56,3 +56,16 @@ export const products = [
     cta: 'Обсудить AI-внедрение',
   },
 ];
+
+// Separate route metadata keeps the historical concept content unchanged.
+export const productLinks = [
+  {
+    product: products[0],
+    href: '#lead-generation',
+    icon: 'target',
+    short: 'Лидогенерация и аналитика',
+  },
+  { product: products[1], href: '#voice-agent', icon: 'phone', short: 'AI-звонилка' },
+  { product: products[2], href: '/neurorop/', icon: 'chart', short: 'NeuroROP' },
+  { product: products[3], href: '#custom-agents', icon: 'spark', short: 'AI-агенты' },
+] as const;
