@@ -29,3 +29,7 @@ Thumbs.db
 # Private OpenCode lab runs, logs and isolated copies
 .opencode-lab/
 __pycache__/
+
+# Local OpenCode Impeccable runtime
+.opencode/skills/impeccable/scripts/bin/
+.playwright-mcp/
