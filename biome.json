@@ -9,8 +9,6 @@
       "tsconfig.json",
       "vite.config.ts",
       "biome.json",
-      "revenue-os/index.html",
-      "sales-journey/index.html",
       "agency/index.html",
       "neurorop/index.html",
       "!!**/.sites",

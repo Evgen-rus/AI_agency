@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
 
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:5173';
@@ -46,6 +47,10 @@ try {
             .filter((hash) => !document.getElementById(decodeURIComponent(hash.slice(1)))),
         );
       assert.deepEqual(brokenAnchors, [], `${route}: missing anchor targets`);
+      const legacyLinks = await page
+        .locator('a[href*="revenue-os"], a[href*="sales-journey"]')
+        .count();
+      assert.equal(legacyLinks, 0, `${route}: links to removed routes`);
       if (width === 1440 || width === 390) {
         const contrast = await page.evaluate(() => {
           function luminance(color) {
@@ -213,10 +218,53 @@ try {
   await page.locator('.brand-header .brand-wordmark').click();
   assert.equal(new URL(page.url()).pathname, '/agency/');
   await page.close();
+
+  // Root HTML redirects to /agency/, preserving query and hash via a replacement navigation.
+  const redirect = await browser.newPage();
+  await redirect.goto(`${base}/agency/?start=1`);
+  const depth = await redirect.evaluate(() => history.length);
+  await redirect.goto(`${base}/?from=root#stay`);
+  await redirect.locator('.agency-product-2').waitFor();
+  assert.equal(new URL(redirect.url()).pathname, '/agency/');
+  assert.equal(new URL(redirect.url()).search, '?from=root');
+  assert.equal(new URL(redirect.url()).hash, '#stay');
+  assert.equal(
+    await redirect.evaluate(() => history.length),
+    depth + 1,
+    'root redirect must replace, not stack, history',
+  );
+  await redirect.close();
+
+  // Removed and unknown paths must not resolve to either page.
+  for (const path of ['/revenue-os/', '/sales-journey/', '/not-a-page/']) {
+    const missing = await browser.newPage();
+    await missing.goto(`${base}${path}`);
+    assert.equal(new URL(missing.url()).pathname, path, `${path}: must not redirect`);
+    assert.equal(await missing.locator('.agency-product').count(), 0, `${path}: agency visible`);
+    assert.equal(await missing.locator('.neuro-process-card').count(), 0, `${path}: neuro visible`);
+    assert.match(await missing.locator('body').innerText(), /404/, `${path}: missing 404`);
+    assert.equal(
+      (await missing.locator('a[href="/agency/"]').count()) >= 1,
+      true,
+      `${path}: no home link`,
+    );
+    await missing.close();
+  }
+
+  // The build must no longer contain the removed entries or their bundles.
+  assert.equal(existsSync('dist/revenue-os'), false, 'dist/revenue-os must be removed');
+  assert.equal(existsSync('dist/sales-journey'), false, 'dist/sales-journey must be removed');
+  const chunks = await readdir('dist/assets');
+  assert.deepEqual(
+    chunks.filter((name) => /revenue|journey|concept/i.test(name)),
+    [],
+    'obsolete concept chunks in dist/assets',
+  );
+
   assert.deepEqual(failures, []);
   await writeFile(`${output}/measurements.json`, JSON.stringify(measurements, null, 2));
   console.log(
-    'PASS: agency + NeuroROP, 7 widths, route links, anchors, ascending/vertical process, keyboard/menu/FAQ, demo/roles, validation, escaped draft, no writes/storage, clean reload, reduced motion, no browser/HTTP errors.',
+    'PASS: agency + NeuroROP, 7 widths, reciprocal links, anchors, ascending/vertical process, keyboard/menu/FAQ, demo/roles, validation, escaped draft, no writes/storage, clean reload, reduced motion, no browser/HTTP errors; root redirect with query/hash and replaced history; unknown and removed routes show 404; removed entries absent from dist.',
   );
 } finally {
   await browser.close();

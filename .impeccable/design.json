@@ -140,7 +140,7 @@
   ],
   "narrative": {
     "northStar": "Clear business context, visible next action",
-    "overview": "Approved 15 October 2026 for /agency/ and /neurorop/. Visual authority: the two images under «референс от директора» and the user's approved implementation plan. Previous C/A/B styles remain historical, independently loaded entries; their documentation is archived in docs/archive/.\n\nThe agency introduces the business in a spacious photographic hero, then presents a standalone product mosaic. NeuroROP explains a single demonstrative situation through four ascending cards connected by a thin curve. Both surfaces are Persuade.",
+    "overview": "Approved 15 October 2026 for /agency/ and /neurorop/. Visual authority: the two images under «референс от директора» and the user's approved implementation plan. Only /agency/ and /neurorop/ are retained; / redirects to /agency/. Historical concepts and their artifacts are removed.\n\nThe agency introduces the business in a spacious photographic hero, then presents a standalone product mosaic. NeuroROP explains a single demonstrative situation through four ascending cards connected by a thin curve. Both surfaces are Persuade.",
     "keyCharacteristics": [
       "Daylight photography and warm paper.",
       "Mixed light/dark mosaic.",
@@ -155,7 +155,7 @@
     ],
     "donts": [
       "Do not add client logos, performance metrics, fabricated testimonials or an implied autonomous CRM write.",
-      "Do not load these styles into C/A/B, change the public home or publish in this local implementation."
+      "Preserve the agency and NeuroROP interface. Root redirects to /agency/; publication uses the existing public Site ID."
     ]
   }
 }

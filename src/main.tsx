@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// Separate entry imports keep each concept's global visual system isolated.
-const { default: App } = await (location.pathname.startsWith('/agency')
-  ? import('./AgencyApp')
-  : location.pathname.startsWith('/neurorop')
-    ? import('./NeuroApp')
-    : location.pathname.startsWith('/revenue-os')
-      ? import('./RevenueApp')
-      : location.pathname.startsWith('/sales-journey')
-        ? import('./JourneyApp')
-        : import('./App'));
+// Only the two current pages have a React entry; every other path shows 404.
+const path = location.pathname.replace(/\/+$/, '') || '/';
+
+let load: (() => Promise<{ default: React.ComponentType }>) | undefined;
+if (path === '/agency') load = () => import('./AgencyApp');
+else if (path === '/neurorop') load = () => import('./NeuroApp');
 
 const root = document.getElementById('root');
-if (!root) throw new Error('Root element is missing');
-ReactDOM.createRoot(root).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+
+if (!load || !root) {
+  document.body.innerHTML =
+    '<main><h1>404</h1><p>Страница не найдена.</p><a href="/agency/">Перейти на главную</a></main>';
+} else {
+  const { default: App } = await load();
+  ReactDOM.createRoot(root).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  );
+}

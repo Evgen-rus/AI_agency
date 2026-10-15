@@ -1,10 +1,10 @@
 # Sites publication
 
-The existing prototype is published through the Sites plugin as a static Vite build. `.openai/hosting.json` holds the exact Site ID and declares `dist/` as the static directory. Reuse that ID; never create another Site for updates.
+The site is published through the Sites plugin as a static Vite build. `.openai/hosting.json` holds the exact Site ID and declares `dist/` as the static directory. Reuse that ID; never create another Site for updates.
 
-The isolated source checkout is `.sites/leadgenbureau-ai-agency/`, excluded from the main repository. It contains application source and a separate Sites Git history. The main GitHub remote is unchanged. Refresh the publishing copy from the current application before future publication; do not assume it tracks edits automatically.
+The published copy is `.sites/leadgenbureau-ai-agency/`, excluded from the main repository; it carries its own Sites Git history and is not synchronized automatically. Refresh it from the current application before publishing, then build `dist/` with three entries: `index.html` (root redirect and 404), `agency/index.html` and `neurorop/index.html`.
 
-Use the plugin's `site-workflow.mjs` helper with the returned short-lived credential supplied through hidden stdin. Never persist or print the token. Record its pushed commit and archive. Current access is public: call `save_site_version`, then `deploy_site_version`, preserving that audience.
+Use the plugin's `site-workflow.mjs` helper with the short-lived credential supplied through hidden stdin. Never persist or print the token, and record the pushed commit. Current access is public: call `save_site_version`, then `deploy_site_version`, preserving that audience.
 
 ## Windows packaging
 
@@ -14,6 +14,6 @@ The plugin build helper's npm shim failed on this host. A normal PowerShell `npm
 
 ## Access
 
-The owner explicitly opened public access and authorized public concept updates. `public` allows anyone with the URL; `workspace_all` allows workspace members; `custom` uses selected viewers/groups. Preserve public access for updates. C is at `/`; A is at `/revenue-os/`; B is at `/sales-journey/`, with separate static HTML entries. Refresh all three entry directories and shared concept navigation before packaging.
+The owner explicitly opened public access. `public` allows anyone with the URL; `workspace_all` allows workspace members; `custom` uses selected viewers/groups. Preserve public access for updates: `/` redirects to `/agency/`, `/neurorop/` is the product landing, and unknown paths show the 404 page.
 
-The preparation form still produces a local browser draft, without sending or storing it. Deployment does not add a backend or a lead reception channel.
+The contact form still produces a local browser draft only, without sending or storing it. Publishing adds no backend or lead-reception channel.

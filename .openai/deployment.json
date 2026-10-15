@@ -1,12 +1,13 @@
 {
   "project_id": "appgprj_6acf5948b3048191a5f50135a32ea2dc",
-  "version_id": "appgprj_6acf5948b3048191a5f50135a32ea2dc~appgver_0b2a4146775c8191aa5006d8e1ccbe19",
-  "deployment_id": "appgdep_6acf8db21a4481918c3e66f22a828383",
+  "version_id": "appgprj_6acf5948b3048191a5f50135a32ea2dc~appgver_933440627dd08191a9dbb386ac1a0609",
+  "version_number": 6,
+  "deployment_id": "appgdep_6ad0f857181c819188c7dda34cbf0ed9",
   "status": "succeeded",
   "url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site",
-  "commit_sha": "1ebae934414dbff67bd5f28fbe83dab87f48faf6",
-  "revenue_url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site/revenue-os/",
-  "journey_url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site/sales-journey/",
+  "commit_sha": "0839009484260c76d760c068bf5ab9f322892e83",
+  "agency_url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site/agency/",
+  "neurorop_url": "https://leadgenbureau-ai-agency.brightcow3.chatgpt.site/neurorop/",
   "access": "public",
-  "updated_at": "2026-10-14T14:12:21.347368+00:00"
+  "updated_at": "2026-10-15T15:59:38.160363+00:00"
 }

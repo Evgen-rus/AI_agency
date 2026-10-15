@@ -5,13 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rolldownOptions: {
-      input: [
-        'index.html',
-        'revenue-os/index.html',
-        'sales-journey/index.html',
-        'agency/index.html',
-        'neurorop/index.html',
-      ],
+      input: ['index.html', 'agency/index.html', 'neurorop/index.html'],
     },
   },
 });

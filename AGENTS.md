@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This LeadGenBureau project contains independent React/TypeScript/Vite concepts: C at `/` (`App.tsx`, `styles.css`), A at `/revenue-os/` (`RevenueApp.tsx`, `revenue.css`) and B at `/sales-journey/` (`JourneyApp.tsx`, `journey.css`), all under `src/`. `products.ts` shares confirmed content; `ConceptNav.tsx` links all variants. `src/assets/` holds Montserrat and its license. Three HTML entries support static hosting; keep their styles isolated.
+This LeadGenBureau React/TypeScript/Vite project has two pages: `/agency/` (`src/AgencyApp.tsx`) and `/neurorop/` (`src/NeuroApp.tsx`). `/` redirects immediately to `/agency/`. `BrandShared.tsx` and `brand.css` provide shared components and styles; `products.ts` holds confirmed product content. `src/assets/` holds brand images, Montserrat and its license. Root redirect and the two page HTML entries support static hosting. Historical concepts have been removed.
 
 `PRODUCT.md` records confirmed facts. `docs/` holds briefs and research. `.impeccable/` stores approved comps, measurements and review evidence; never serve it as application content. `.agents/skills/impeccable/` is the independent project-local Codex skill.
 
@@ -25,7 +25,7 @@ Use two-space indentation, single-quoted JavaScript strings and descriptive name
 
 ## Testing Guidelines
 
-The three `scripts/check-*.mjs` files use Playwright and Node assertions for C/A/B at five/six/seven widths, product/stage selection, reciprocal navigation, scroll state, keyboard access, validation and absence of submissions/storage. Extend checks for changed behavior. No coverage threshold or unit-test framework is configured. Report checks performed; screenshots alone do not prove functionality.
+The retained browser checks use Playwright and Node assertions for agency/NeuroROP at seven widths, reciprocal navigation, keyboard access, validation, absence of submissions/storage, root redirection and removal of historical routes. Extend checks for changed behavior. No coverage threshold or unit-test framework is configured. Report checks performed; screenshots alone do not prove functionality.
 
 ## Commit & Pull Request Guidelines
 
@@ -33,4 +33,4 @@ Follow the initial history's imperative subjects, such as `Initialize website pr
 
 ## Product Safety & Frontend Skill
 
-Use `$impeccable` and its Windows launcher for frontend work. Preserve C and honest readiness. Never invent cases, metrics or capabilities, commit secrets, or connect submissions without authorization. Sites publication is authorized; preserve public access and the existing Site ID in `.openai/hosting.json`. `.sites/` is an ignored publishing copy, not an automatically synchronized source. Do not modify global skills or the source project.
+Use `$impeccable` and its Windows launcher for frontend work. Preserve the agency and NeuroROP pages and honest readiness. Never invent cases, metrics or capabilities, commit secrets, or connect submissions without authorization. Sites publication is authorized; preserve public access and the existing Site ID in `.openai/hosting.json`. `.sites/` is an ignored publishing copy, not an automatically synchronized source. Do not modify global skills or the source project.

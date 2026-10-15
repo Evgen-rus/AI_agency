@@ -59,7 +59,7 @@ components:
 
 **Creative North Star: "Clear business context, visible next action"**
 
-Approved 15 October 2026 for /agency/ and /neurorop/. Visual authority: the two images under «референс от директора» and the user's approved implementation plan. Previous C/A/B styles remain historical, independently loaded entries; their documentation is archived in docs/archive/.
+Approved 15 October 2026 for /agency/ and /neurorop/. Visual authority: the two images under «референс от директора» and the user's approved implementation plan.
 
 The agency introduces the business in a spacious photographic hero, then presents a standalone product mosaic. NeuroROP explains a single demonstrative situation through four ascending cards connected by a thin curve. Both surfaces are Persuade.
 
@@ -107,4 +107,4 @@ Contact: trimmed required fields, bounded lengths, field-specific errors, escape
 - Keep image and text assets separate; never ship either reference as a page background.
 - Keep context available without animation, hover or selection.
 - Do not add client logos, performance metrics, fabricated testimonials or an implied autonomous CRM write.
-- Do not load these styles into C/A/B, change the public home or publish in this local implementation.
+- Do not load these styles anywhere else or change the two approved compositions.
