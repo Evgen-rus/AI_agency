@@ -22,8 +22,8 @@ def safe_text(text):
 
 
 def check_price(model, catalog):
-    if model not in [SETTINGS['primary'], *SETTINGS['backups']]:
-        raise ValueError('Model is outside the explicit free allowlist')
+    if not model.startswith('opencode/'):
+        raise ValueError('Only explicitly selected opencode provider models are supported')
     entry = catalog['opencode']['models'].get(model.split('/', 1)[1])
     if not entry or entry.get('status') == 'deprecated':
         raise ValueError('Model missing or deprecated in live catalog')
@@ -48,7 +48,7 @@ def configuration(model, mode):
         permissions.append({'action': action, 'resource': '*', 'effect': 'allow'})
         policies.append({'action': 'tool.use', 'resource': f'{action}:*', 'effect': 'allow'})
     # The model may run project checks, not arbitrary host shell commands.
-    for command in (['npm run typecheck', 'npm run check', 'npm run build', 'npm test', 'node --test', 'node --test *'] if mode == 'edit' else []):
+    for command in (['npm run typecheck', 'npm run check', 'npm run build', 'npm run test:ui', 'npm test', 'node --test', 'node --test *'] if mode == 'edit' else []):
         permissions.append({'action': 'shell', 'resource': command, 'effect': 'allow'})
         policies.append({'action': 'tool.use', 'resource': f'shell:{command}', 'effect': 'allow'})
     for pattern in ['.git/*', '*/.git/*', '.env', '.env.*', '*/.env', '*/.env.*', '*.pem', '*.key']:
@@ -63,7 +63,7 @@ def configuration(model, mode):
         'default_agent': 'build', 'snapshots': False, 'formatter': False,
         'lsp': False, 'warming': False, 'compaction': {'auto': False},
         'permissions': permissions, 'policies': policies,
-        'agents': {name: {'model': model_ref, 'permissions': permissions, 'steps': 20}
+        'agents': {name: {'model': model_ref, 'permissions': permissions, 'steps': 40 if name == 'build' else 20}
                    for name in ['build', 'title', 'summary', 'compaction']},
     }
 
@@ -108,6 +108,46 @@ def execute(command, cwd, env, timeout, input_text=None):
     return process.returncode, stdout, stderr, timed_out, round(time.monotonic() - started, 3)
 
 
+
+def execute_visible(command, cwd, env, timeout, input_text=None):
+    if os.name != 'nt':
+        raise ValueError('Visible terminal launcher currently requires Windows; no hidden fallback')
+    started = time.monotonic()
+    with tempfile.TemporaryDirectory(prefix='opencode-terminal-') as directory:
+        runtime = Path(directory)
+        (runtime / 'prompt.txt').write_text(input_text or '', encoding='utf-8')
+        (runtime / 'command.json').write_text(json.dumps(command), encoding='utf-8')
+        script = runtime / 'run.ps1'
+        script.write_text(r"""$ErrorActionPreference = 'Stop'
+[Console]::OutputEncoding = [Text.UTF8Encoding]::new()
+$OutputEncoding = [Console]::OutputEncoding
+Set-Location -LiteralPath $env:OPENCODE_VISIBLE_CWD
+$command = Get-Content -LiteralPath "$PSScriptRoot/command.json" -Raw -Encoding UTF8 | ConvertFrom-Json
+$exe = $command[0]
+$cliArgs = $command[1..($command.Count - 1)]
+$code = 1
+try {
+  Get-Content -LiteralPath "$PSScriptRoot/prompt.txt" -Raw -Encoding UTF8 | & $exe @cliArgs 2> "$PSScriptRoot/stderr.txt" | Tee-Object -FilePath "$PSScriptRoot/stdout.txt"
+  $code = $LASTEXITCODE
+} catch { $_ | Out-File -LiteralPath "$PSScriptRoot/stderr.txt" -Encoding utf8 }
+$code | Out-File -LiteralPath "$PSScriptRoot/exit.txt" -Encoding ascii
+Read-Host 'OpenCode finished. Press Enter to close this window'
+""", encoding='utf-8-sig')
+        child_env = {**env, 'OPENCODE_VISIBLE_CWD': str(cwd)}
+        process = subprocess.Popen(['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
+                                   cwd=cwd, env=child_env, creationflags=subprocess.CREATE_NEW_CONSOLE)
+        while not (runtime / 'exit.txt').exists():
+            if process.poll() is not None or time.monotonic() - started > timeout:
+                subprocess.run(['taskkill', '/PID', str(process.pid), '/T', '/F'], capture_output=True, check=False)
+                return 1, '', 'Visible terminal closed early or timed out', True, round(time.monotonic() - started, 3)
+            time.sleep(0.2)
+        def read_output(name):
+            path = runtime / name
+            data = path.read_bytes() if path.exists() else b''
+            return data.decode('utf-16' if data.startswith(b'\xff\xfe') else 'utf-8-sig', errors='replace')
+        return int(read_output('exit.txt').strip()), read_output('stdout.txt'), read_output('stderr.txt'), False, round(time.monotonic() - started, 3)
+
+
 def parse_result(stdout, code, timeout):
     events, malformed = [], []
     for line in stdout.splitlines():
@@ -135,6 +175,11 @@ def parse_result(stdout, code, timeout):
         status = 'auth_error'
     elif any('no-route' in str(e) for e in errors):
         status = 'model_unavailable'
+    if code == 0 and answer.strip() and not errors and not malformed and not timeout and (
+        re.search(r'maximum (?:number of )?steps|maximum number of steps allowed', answer, re.I)
+        or any(e.get('part', {}).get('reason') in {'max_steps', 'max-steps', 'length'} for e in events if e.get('type') == 'step_finish')
+    ):
+        status = 'incomplete'
     usage = [e.get('part') for e in events if e.get('type') == 'step_finish']
     return {'status': status, 'errors': errors, 'answer': answer, 'usage_events': usage,
             'events': events, 'unparsed_stdout': malformed, 'acceptance': 'requires_codex_review'}
@@ -142,13 +187,16 @@ def parse_result(stdout, code, timeout):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--root', type=Path, required=True)
-    parser.add_argument('--task', type=Path, required=True)
+    parser.add_argument('--root', type=Path, default=Path.cwd())
+    parser.add_argument('--task', type=Path)
     parser.add_argument('--mode', choices=['analysis', 'edit'], default='analysis')
     parser.add_argument('--model', default=SETTINGS['primary'])
-    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--list-models', action='store_true', help='List anonymous zero-price models; no generation')
     parser.add_argument('--timeout', type=int, default=180)
     args = parser.parse_args()
+    if not args.list_models and (args.task is None or args.output is None):
+        parser.error('--task and --output are required for a model run')
     report = {'status': 'preflight_error', 'model': args.model, 'mode': args.mode,
               'reported_cost': None, 'acceptance': 'requires_codex_review'}
     output = None
@@ -157,17 +205,18 @@ def main():
         if args.timeout < 1 or args.timeout > 600:
             raise ValueError('Timeout must be 1..600 seconds')
         root = args.root.resolve(strict=True)
-        task = safe_text(args.task.read_text(encoding='utf-8-sig'))
+        task = '' if args.list_models else safe_text(args.task.read_text(encoding='utf-8-sig'))
         if len(task.encode('utf-8')) > 50000:
             raise ValueError('Task exceeds 50000 bytes')
         exe = cli_path()
         request = urllib.request.Request(SETTINGS['pricing_url'], headers={'User-Agent': 'OpenCode-Agent-Lab/1.0', 'Accept': 'application/json'})
         with urllib.request.urlopen(request, timeout=20) as response:
             catalog = json.load(response)
-        pricing = check_price(args.model, catalog)
-        destination = args.output.resolve()
-        destination.mkdir(parents=True, exist_ok=False)
-        output = destination
+        pricing = None if args.list_models else check_price(args.model, catalog)
+        if not args.list_models:
+            destination = args.output.resolve()
+            destination.mkdir(parents=True, exist_ok=False)
+            output = destination
         workspace = root
         config = configuration(args.model, args.mode)
         with tempfile.TemporaryDirectory(prefix='opencode-delegate-') as temp:
@@ -186,13 +235,29 @@ def main():
             # Anonymous catalog must expose the exact selected model before any call.
             available = execute([exe, 'models', '--standalone'], workspace, env, 30)
             report['available_models'] = available[1].splitlines()
-            if available[0] or args.model not in report['available_models']:
+            if available[0]:
+                raise ValueError('Anonymous CLI model discovery failed')
+            if args.list_models:
+                free_models = []
+                for model in report['available_models']:
+                    try:
+                        metadata = check_price(model, catalog)
+                    except (ValueError, KeyError):
+                        continue
+                    free_models.append({'id': model, 'limit': metadata['limit']})
+                print(json.dumps({'free_models': free_models}, ensure_ascii=True))
+                return 0
+            if args.model not in report['available_models']:
                 report['status'] = 'model_unavailable'
                 raise ValueError('Selected model unavailable in fresh anonymous CLI catalog')
-            prompt = ('Task from Codex. Work in the current project only. '
-                      + ('Analyze only. ' if args.mode == 'analysis' else 'Implement the requested changes. ')
-                      + '\n' + task)
-            result = execute([exe, 'run', '--standalone', '--agent', 'build', '--model', args.model,
+            tools = ('Read/search only: read lists directories, glob finds files, grep searches text. No shell or edits.'
+                     if args.mode == 'analysis' else
+                     'Use read/glob/grep, edit existing files, write new files. Shell ONLY: npm run typecheck, npm run check, npm run build, npm run test:ui, npm test, node --test [test paths]. No shell discovery or file deletion; report exact deletion paths for Codex.')
+            action = 'Return the requested analysis.' if args.mode == 'analysis' else 'Implement the requested change without a separate reconnaissance report.'
+            prompt = ('Task from Codex. Work in the current project only. ' + tools
+                      + ' Read only relevant files. ' + action + ' '
+                      + 'Do not repeat denied commands. End with a compact report: changed paths and purpose; exact check commands, exit codes and pass/fail counts; remaining blockers. Do not claim unrun tests passed.\n' + task)
+            result = execute_visible([exe, 'run', '--standalone', '--agent', 'build', '--model', args.model,
                               '--format', 'json', '--title', 'Codex delegation lab'],
                              workspace, env, args.timeout, prompt)
             code, stdout, stderr, timeout, elapsed = result
@@ -206,7 +271,9 @@ def main():
     report['total_duration_seconds'] = round(time.monotonic() - started, 3)
     if output:
         (output / 'report.json').write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding='utf-8')
-    summary = {k: v for k, v in report.items() if k not in {'events', 'answer', 'usage_events', 'unparsed_stdout'}}
+    summary = {k: report[k] for k in ('status', 'model', 'reported_cost', 'exit_code', 'duration_seconds', 'total_duration_seconds', 'error') if k in report}
+    if report.get('answer'):
+        summary['answer'] = report['answer'][-2500:]
     summary['report'] = str(output / 'report.json') if output else None
     print(json.dumps(summary, ensure_ascii=True))
     return 0 if report['status'] == 'completed' else 1

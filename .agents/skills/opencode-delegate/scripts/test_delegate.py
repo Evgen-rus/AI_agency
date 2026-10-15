@@ -23,6 +23,11 @@ class DelegateTests(unittest.TestCase):
                 d.check_price(d.SETTINGS['primary'], catalog)
         with self.assertRaises(ValueError):
             d.check_price('opencode/paid', catalog)
+        entry['cost'] = {'input': 0, 'output': 0}
+        catalog['opencode']['models']['another-free'] = entry
+        self.assertEqual(d.check_price('opencode/another-free', catalog)['cost']['input'], 0)
+        with self.assertRaises(ValueError):
+            d.check_price('other/another-free', catalog)
 
     def test_credentials_not_inherited(self):
         with patch.dict(os.environ, {'OPENAI_API_KEY': 'synthetic', 'OPENCODE_API_KEY': 'synthetic', 'OPENCODE_CONFIG': 'unsafe'}):
@@ -40,10 +45,10 @@ class DelegateTests(unittest.TestCase):
             rules = config['policies']
             matching = [r for r in rules if r['action'] == 'tool.use' and fnmatch.fnmatchcase(f'{action}:{resource}', r['resource'])]
             return matching[-1]['effect'] == 'allow'
-        self.assertTrue(permits(analysis, 'read', 'src/ConceptNav.tsx'))
-        self.assertFalse(permits(analysis, 'edit', 'src/ConceptNav.tsx'))
+        self.assertTrue(permits(analysis, 'read', 'src/AgencyApp.tsx'))
+        self.assertFalse(permits(analysis, 'edit', 'src/AgencyApp.tsx'))
         self.assertFalse(permits(analysis, 'shell', 'npm run build'))
-        self.assertTrue(permits(edit, 'edit', 'src/ConceptNav.tsx'))
+        self.assertTrue(permits(edit, 'edit', 'src/AgencyApp.tsx'))
         self.assertFalse(permits(edit, 'external_directory', 'C:/Users/other/*'))
         self.assertFalse(permits(edit, 'shell', 'git push'))
         self.assertFalse(permits(edit, 'shell', 'npm run build && git push'))
@@ -63,6 +68,10 @@ class DelegateTests(unittest.TestCase):
         partial = text + '\n' + json.dumps({'type': 'step_finish', 'part': {'reason': 'tool-calls'}})
         self.assertEqual(d.parse_result(partial, 0, False)['status'], 'cli_error')
         self.assertEqual(d.parse_result(text, 0, True)['status'], 'timeout')
+        exhausted = json.dumps({'type': 'text', 'part': {'text': 'The maximum number of steps allowed for this agent have been reached.'}})
+        self.assertEqual(d.parse_result(exhausted, 0, False)['status'], 'incomplete')
+        limited = text + '\n' + json.dumps({'type': 'step_finish', 'part': {'reason': 'length'}})
+        self.assertEqual(d.parse_result(limited, 0, False)['status'], 'incomplete')
 
     def test_unicode_and_quotes_without_shell(self):
         with tempfile.TemporaryDirectory(prefix='delegate test ') as directory:
