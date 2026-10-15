@@ -1,0 +1,6 @@
+{
+  "primary": "opencode/deepseek-v4.1-flash-free",
+  "backups": ["opencode/mimo-v2.6-flash-free", "opencode/nemotron-3-ultra-free", "opencode/nemotron-3.5-lightning-free"],
+  "pricing_url": "https://models.dev/api.json",
+  "official_prices": "https://opencode.ai/v2/docs/console/models/"
+}

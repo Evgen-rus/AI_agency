@@ -25,3 +25,7 @@ Thumbs.db
 # Local Sites publishing checkout and archives
 .sites/
 .sites-runtime/
+
+# Private OpenCode lab runs, logs and isolated copies
+.opencode-lab/
+__pycache__/
