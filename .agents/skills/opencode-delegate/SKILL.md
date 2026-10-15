@@ -12,7 +12,7 @@ description: Delegate substantial exploration, implementation and checks to a us
    explore, implement and run relevant checks. Send a short goal, context, constraints and
    acceptance criteria; do not first read the same modules or request a separate repo tour.
 3. Run `python <skill>/scripts/delegate.py --root <repo> --task <task.txt> --output <new-ignored-run-dir> --model <selected-id> --mode edit --timeout 600`.
-   Windows workers open visibly with live output, close automatically and save the run report.
+   Run workers through the normal execution tools without separate terminal windows; save the report.
    Omit `--mode edit` for analysis. Default tools: read/glob/grep; edit adds text writes and the
    listed npm/Node checks. No arbitrary shell, deletion, deploy or push; Codex handles authorised
    deletions from exact paths. Workers must not waste steps on disallowed or unrelated checks.

@@ -226,11 +226,15 @@ class DelegateTests(unittest.TestCase):
         self.assertNotIn('mcp', analysis)
         self.assertNotIn('mcp', edit)
 
-    def test_visible_terminal_autoclose(self):
-        # Offline guard: no Read-Host keystroke and the exit code is written last.
-        self.assertNotIn('Read-Host', d.VISIBLE_SCRIPT)
-        self.assertIn('exit.txt', d.VISIBLE_SCRIPT)
-        self.assertLess(d.VISIBLE_SCRIPT.index('stderr.txt'), d.VISIBLE_SCRIPT.index('exit.txt'))
+    def test_windows_execution_has_no_console(self):
+        with patch.object(d.os, 'name', 'nt'), \
+             patch.object(d.subprocess, 'CREATE_NO_WINDOW', 0x08000000, create=True), \
+             patch.object(d.subprocess, 'Popen') as launch:
+            launch.return_value.communicate.return_value = ('output', '')
+            launch.return_value.returncode = 0
+            result = d.execute(['worker'], '.', {}, 10, 'task')
+            self.assertEqual(result[:3], (0, 'output', ''))
+            self.assertEqual(launch.call_args.kwargs['creationflags'], 0x08000000)
 
 
 if __name__ == '__main__':

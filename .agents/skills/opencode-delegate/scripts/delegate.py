@@ -38,25 +38,6 @@ UI_RULES = (
     'the report. Never submit forms, buy, log in, upload or write real data unless the user explicitly authorized it. '
     'Never switch model and never use paid APIs or keys.'
 )
-# Visible worker terminal. The CLI output is teed to stdout.txt; the window closes
-# itself when the CLI exits (no Read-Host) so the temp directory is never removed
-# while the terminal is still open.
-VISIBLE_SCRIPT = r"""$ErrorActionPreference = 'Stop'
-[Console]::OutputEncoding = [Text.UTF8Encoding]::new()
-$OutputEncoding = [Console]::OutputEncoding
-Set-Location -LiteralPath $env:OPENCODE_VISIBLE_CWD
-$command = Get-Content -LiteralPath "$PSScriptRoot/command.json" -Raw -Encoding UTF8 | ConvertFrom-Json
-$exe = $command[0]
-$cliArgs = $command[1..($command.Count - 1)]
-$code = 1
-try {
-  Get-Content -LiteralPath "$PSScriptRoot/prompt.txt" -Raw -Encoding UTF8 | & $exe @cliArgs 2> "$PSScriptRoot/stderr.txt" | Tee-Object -FilePath "$PSScriptRoot/stdout.txt"
-  $code = $LASTEXITCODE
-} catch { $_ | Out-File -LiteralPath "$PSScriptRoot/stderr.txt" -Encoding utf8 }
-$code | Out-File -LiteralPath "$PSScriptRoot/exit.txt" -Encoding ascii
-"""
-
-
 def safe_text(text):
     if SECRET.search(text):
         raise ValueError('Potential secret detected; redact locally before delegation')
@@ -170,7 +151,8 @@ def execute(command, cwd, env, timeout, input_text=None):
     started = time.monotonic()
     process = subprocess.Popen(command, cwd=cwd, env=env, stdin=subprocess.PIPE,
                                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                               text=True, encoding='utf-8', errors='replace', shell=False)
+                               text=True, encoding='utf-8', errors='replace', shell=False,
+                               creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
     timed_out = False
     try:
         stdout, stderr = process.communicate(input_text, timeout=timeout)
@@ -178,60 +160,11 @@ def execute(command, cwd, env, timeout, input_text=None):
         timed_out = True
         if os.name == 'nt':
             subprocess.run(['taskkill', '/PID', str(process.pid), '/T', '/F'],
-                           capture_output=True, check=False)
+                           capture_output=True, check=False, creationflags=subprocess.CREATE_NO_WINDOW)
         process.kill()
         stdout, stderr = process.communicate()
     return process.returncode, stdout, stderr, timed_out, round(time.monotonic() - started, 3)
 
-
-
-def execute_visible(command, cwd, env, timeout, input_text=None):
-    if os.name != 'nt':
-        raise ValueError('Visible terminal launcher currently requires Windows; no hidden fallback')
-    started = time.monotonic()
-    with tempfile.TemporaryDirectory(prefix='opencode-terminal-') as directory:
-        runtime = Path(directory)
-        (runtime / 'prompt.txt').write_text(input_text or '', encoding='utf-8')
-        (runtime / 'command.json').write_text(json.dumps(command), encoding='utf-8')
-        script = runtime / 'run.ps1'
-        # No Read-Host: the worker terminal closes itself when the CLI exits so the
-        # temporary directory can be removed without racing a live window.
-        script.write_text(VISIBLE_SCRIPT, encoding='utf-8-sig')
-        child_env = {**env, 'OPENCODE_VISIBLE_CWD': str(cwd)}
-        process = subprocess.Popen(['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
-                                   cwd=cwd, env=child_env, creationflags=subprocess.CREATE_NEW_CONSOLE)
-        early = timed_out = False
-        while not (runtime / 'exit.txt').exists():
-            if process.poll() is not None:
-                early = True
-                break
-            if time.monotonic() - started > timeout:
-                timed_out = True
-                subprocess.run(['taskkill', '/PID', str(process.pid), '/T', '/F'], capture_output=True, check=False)
-                break
-            time.sleep(0.2)
-        # Let the process fully exit before TemporaryDirectory cleanup removes its files.
-        try:
-            process.wait(timeout=15)
-        except subprocess.TimeoutExpired:
-            subprocess.run(['taskkill', '/PID', str(process.pid), '/T', '/F'], capture_output=True, check=False)
-            try:
-                process.wait(timeout=15)
-            except subprocess.TimeoutExpired:
-                pass
-
-        def read_output(name):
-            path = runtime / name
-            data = path.read_bytes() if path.exists() else b''
-            return data.decode('utf-16' if data.startswith(b'\xff\xfe') else 'utf-8-sig', errors='replace')
-
-        code = int(read_output('exit.txt').strip() or 1)
-        stderr = read_output('stderr.txt')
-        if early:
-            stderr = (stderr + '\nVisible terminal closed before the CLI wrote a result').strip()
-        elif timed_out:
-            stderr = (stderr + '\nVisible terminal timed out').strip()
-        return code, read_output('stdout.txt'), stderr, timed_out, round(time.monotonic() - started, 3), early
 
 
 def compact(value, limit=200):
@@ -391,11 +324,11 @@ def main():
                       + ' Read only relevant files. ' + action + ' '
                       + 'End with a compact report: changed paths and purpose; exact check commands with pass/fail '
                       + 'counts; remaining blockers. Do not echo exit codes and do not claim unrun tests passed.\n' + task)
-            result = execute_visible([exe, 'run', '--standalone', '--agent', 'build', '--model', args.model,
+            result = execute([exe, 'run', '--standalone', '--agent', 'build', '--model', args.model,
                               '--format', 'json', '--title', 'Codex delegation lab'],
                              workspace, env, args.timeout, prompt)
-            code, stdout, stderr, timeout, elapsed, early = result
-            report.update(parse_result(stdout, code, timeout, early))
+            code, stdout, stderr, timeout, elapsed = result
+            report.update(parse_result(stdout, code, timeout))
             report.update(exit_code=code, duration_seconds=elapsed, stderr=stderr,
                           cli_version=version[1].strip(), pricing=pricing, root=str(root))
             costs = [p['cost'] for p in report['usage_events'] if isinstance(p, dict) and isinstance(p.get('cost'), (int, float))]
